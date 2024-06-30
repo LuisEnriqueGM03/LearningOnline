@@ -1,0 +1,71 @@
+.banner{
+    background: radial-gradient(circle, #ae70ff, black);
+    height: 500px;
+}
+.banner-container img{
+    width: 60%;
+    height: 60%;
+    display: block;
+    margin: 0 auto;
+    
+}
+.banner-text{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+.banner-text a{
+    color: black;
+    text-decoration: none;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+.banner-text a#btn-banner:hover{
+    background-color: #ae70ff;
+    color: white;
+    border-bottom: 2px solid white;  
+}
+@media (min-width:768px) {
+    .banner{
+        height: 600px;
+    }
+    .banner-container img{
+        width: 40%;
+        height: 40%;
+    }
+    .banner-text{
+        font-size: 30px;
+    }
+    .banner-text a{
+        font-size: 20px;
+    }
+}
+@media (min-width:992px) {
+    .banner{
+        margin-top: 80px;
+        height: 450px;
+    }
+    .banner-container {
+        
+        width: 1140px;
+        margin: 0 auto;
+        padding-top: 50px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .banner-container img{
+        width: 30%;
+        height: 30%;
+        float: right;
+        margin: 0;
+    }
+    .banner-text{
+        font-size: 20px;
+    }
+    
+
+    
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../css/categoria-curso/style.css">
+    <link rel="stylesheet" href="../../css/all.min.css">
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="../css/categoria-curso/header.css">
+    <link rel="stylesheet" href="../css/categoria-curso/search-course.css">
+    <link rel="stylesheet" href="../css/categoria-curso/course.css">
+    <title>Learning Online</title>
+</head>
+
+<body>
+<main class="main-container">
+    <header class="header">
+        <div class="header-container">
+            <div class="header-logo">
+                <h1>LearningOnline</h1>
+            </div>
+            <nav class="header-nav">
+                <label for="menu" id="menu-switch"><i class="fas fa-bars"></i></label>
+                <input type="checkbox" id="menu">
+                <ul class="ul-nav">
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../index.html#about">Detalles</a></li>
+                    <li><a href="../../index.html#category">Categorias</a></li>
+                    <li><a href="../../index.html#contact">Contactanos</a></li>
+                    <li><a href="/root/pages/login/login.html" id="acceder">Acceder</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="search-course">
+        <div class="search-course-container">
+            <h2>Busca tu curso</h2>
+            <h4>Encuentra el curso que necesitas</h4>
+            <form action="" method="POST">
+                <input type="text" name="search" id="search" placeholder="Escribe el curso...">
+                <input type="submit" value="Buscar" class="btn">
+            </form>
+        </div>
+    </section>
+    <section class="course">
+        <div class="course-container">
+            <div class="course-cards carousel" id="course-cards">
+                <!-- Aquí se agregarán los cursos dinámicamente -->
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+<script src="../js/categoria-cursos-load.js"></script>
+</html>

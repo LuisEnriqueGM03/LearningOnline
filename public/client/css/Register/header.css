@@ -1,0 +1,139 @@
+.header-logo h1,
+.header-nav #menu-switch {
+    color: #ae70ff;
+    font-size: 1.8em;
+}
+
+.header-container,
+.ul-nav li {
+    Background-color: #1c1e1d;
+    border-bottom: 1px solid #fff;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100px;
+    position: relative
+}
+
+.header-logo {
+    float: left;
+    margin: 15px;
+    padding: 0
+}
+
+.header-nav {
+    margin-top: -20px
+}
+
+.header-nav #menu-switch {
+    position: absolute;
+    top: 38px;
+    right: 40px
+}
+
+.header-nav input,
+.header-nav ul {
+    display: none
+}
+
+.header-nav #menu:checked+ul {
+    display: block;
+
+}
+
+.ul-nav {
+    padding: 0;
+}
+
+.ul-nav li {
+    list-style: none;
+    margin-left: 0;
+    text-align: center;
+    padding: 5px
+}
+
+.ul-nav a {
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700
+}
+
+.ul-nav a#acceder {
+    color: #ae70ff;
+}
+
+@media (min-width:768px) {
+    .header-nav ul {
+        display: flex
+    }
+
+    .header-nav #menu-switch {
+        display: none
+    }
+
+    .header-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between
+    }
+
+    .header-nav {
+        margin: 15px
+    }
+
+    .ul-nav li {
+        background-color: #1c1e1d;
+        border-bottom: none
+    }
+
+    .ul-nav a {
+        font-size: 18px
+    }
+
+    .ul-nav a#acceder {
+        color: black;
+        background-color: white;
+        border-radius: 10px;
+        padding: 5px 10px;
+    }
+
+    @media (min-width:992px) {
+        .header {
+            background-color: #1c1e1d;
+            border-bottom: 1px solid #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+            height: 80px;
+        }
+
+        .header-container {
+            width: 1140px;
+            margin: 0 auto;
+            height: 80px;
+        }
+
+        .ul-nav a {
+            font-size: 16px
+        }
+
+        .ul-nav a#acceder {
+            color: white;
+            background-color: #ae70ff;
+            border-radius: 10px;
+            padding: 5px 10px;
+        }
+
+        .ul-nav a:hover {
+            color: #ae70ff;
+            border-bottom: 2px solid white;
+        }
+
+        .ul-nav a#acceder:hover {
+            color: #ae70ff;
+            background-color: white;
+        }
+    }
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../css/admin-page-category/style.css" type="text/css">
+    <link rel="stylesheet" href="../../css/all.min.css" type="text/css">
+    <link rel="stylesheet" href="../../css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="../../css/fonts.css" type="text/css">
+    <link rel="stylesheet" href="../css/admin-page-category/footer.css" type="text/css">
+    <link rel="stylesheet" href="../css/admin-page-category/header.css" type="text/css">
+    <link rel="stylesheet" href="../css/admin-page-category/my-course.css" type="text/css">
+    <link rel="stylesheet" href="../css/admin-page-category/presentation.css" type="text/css">
+    <link rel="stylesheet" href="../css/admin-page-category/eliminate-popup.css" type="text/css">
+    <link rel="stylesheet" href="../css/admin-page-category/category-add-popup.css" type="text/css">
+    <link rel="stylesheet" href="../css/admin-page-category/category-edit-popup.css" type="text/css">
+    <title>Learning Online</title>
+</head>
+
+<body>
+<header class="header">
+    <div class="header-container">
+        <div class="header-logo">
+            <h1>LearningOnline</h1>
+        </div>
+        <nav class="header-nav">
+            <label for="menu" id="menu-switch" aria-label="Menu"><i class="fas fa-bars"></i></label>
+            <input type="checkbox" id="menu">
+            <ul class="ul-nav">
+
+                <li id="no-slide"><a href="admin-page.html">Cursos</a></li>
+                <li id="no-slide"><a href="admin-page-category.html">Categorias</a></li>
+                <li class="user-info">
+                    <a class="user-bubble" id="user-link" href="#" onclick="logoutAndRedirect()">
+                        <i class="fas fa-user"></i> <span id="username-display">ERROR</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<section class="presentation">
+    <div class="presentation-container">
+        <div class="presentation-box">
+            <h2>Admin Dashboard</h2>
+        </div>
+    </div>
+</section>
+
+
+<section class="my-course">
+    <div class="my-course-container">
+
+        <aside>
+            <div class="aside-items">
+                <div class="aside-item">
+                    <a id="toggle-aside-menu" class="btn-icon">
+                        <i class="fas fa-bars"></i>
+                        <span class="icon-label">Menú</span>
+                    </a>
+                </div>
+                <div class="aside-item">
+                    <a id="toggle-aside"  href="admin-page.html" class="btn-icon">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="icon-label">Cursos</span>
+                    </a>
+                </div>
+
+                <!-- <div class="aside-item">
+                     <a id="toggle-aside" class="btn-icon" href="../pages/client-descubrir.html">
+                         <i class="fa-solid fa-user"></i>
+                         <span class="icon-label">Usuarios</span>
+                     </a>
+                 </div>-->
+
+                <div class="aside-item">
+                    <a id="toggle-aside" class="btn-category" href="admin-page-category.html">
+                        <i class="fa-solid fa-book"></i>
+                        <span class="icon-label">Categorias</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <div class="my-course-box">
+            <h2>Categorias</h2>
+            <div class="my-course-header">
+                <div class="my-course-search">
+                    <input type="text" placeholder="Buscar Categoria" class="search-input">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="my-course-add">
+                    <button class="btn" id="btn-add-category">Agregar Categoria</button>
+                </div>
+            </div>
+            <div class="my-course-cards">
+                <div class="my-course-card">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<div class="eliminate-popup">
+    <div class="eliminate-popup-container">
+        <div class="eliminate-popup-box">
+            <div class="warning-icon">
+                <img src="../../assets/images/Alert.png" alt="Advertencia">
+            </div>
+            <h2>¿Seguro que quieres Eliminar la categoria?</h2>
+            <div class="eliminate-popup-buttons">
+                <button class="btn cancel">Volver</button>
+                <button class="btn delete">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="category-add-popup" >
+    <div class="category-add-container">
+        <div class="category-add-box">
+            <h2>Agregar Categoria</h2>
+            <form id="category-form" class="category-add-form">
+                <label for="category-name">Nombre del Categoria:</label>
+                <input type="text" id="category-name" class="category-name">
+
+                <label for="category-description">Descripción:</label>
+                <textarea id="category-description" class="category-description" rows="4"></textarea>
+
+                <label for="category-image">Imagen del Curso:</label>
+                <input type="file" id="category-image" class="category-image" accept="image/*">
+
+                <div class="form-buttons">
+                    <button type="button" class="btn cancelar-btn">Cancelar</button>
+                    <button type="submit" class="btn agregar-btn">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="category-edit-popup">
+    <div class="category-edit-container">
+        <div class="category-edit-box">
+            <h2>Editar Categoria</h2>
+            <form id="category-edit-form" class="category-edit-form">
+                <label for="category-edit-name">Nombre del Categoria:</label>
+                <input type="text" id="category-edit-name" class="category-edit-name">
+
+                <label for="category-edit-description">Descripción:</label>
+                <textarea id="category-edit-description" class="category-edit-description" rows="4"></textarea>
+
+                <label for="category-edit-image">Imagen del Curso:</label>
+                <input type="file" id="category-edit-image" class="category-edit-image" accept="image/*">
+
+                <div class="form-buttons">
+                    <button type="button" class="btn cancelar-btn">Cancelar</button>
+                    <button type="submit" class="btn guardar-btn">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <h1>© Copyright LearningOnline. All Rights Reserved</h1>
+            <h1>Designed by Luis Enrique Gil</h1>
+        </div>
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+</body>
+<script src="../js/admin-page-category/menu-slide.js"></script>
+<script src="../js/admin-page-category/user-load.js"></script>
+<script src="../js/admin-page-category/category-load.js"></script>
+<script src="../js/admin-page-category/category-create-popup.js"></script>
+<script src="../js/admin-page-category/category-edit-popup.js"></script>
+<script src="../js/admin-page-category/category-eliminate-popup.js"></script>
+<script src="../../js/CurrentUser.js"></script>
+<script src="../../client/js/logout.js"></script>
+</html>

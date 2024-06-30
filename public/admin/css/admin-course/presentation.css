@@ -1,0 +1,80 @@
+.presentation-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.curso-presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0px 30px black;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    margin: auto;
+
+    background-color: #2f2f31;
+}
+
+.image-section {
+    text-align: center;
+
+    padding: 30px;
+}
+
+.image-section img {
+    width: 100px;
+    height: auto;
+}
+
+.image-section h1 {
+    color: white;
+    font-size: 24px;
+    margin: 10px 0;
+}
+.curso-presentation P{
+    color: white;
+
+
+}
+
+
+.description-section {
+    overflow-y: auto;
+    height: 250px;
+    padding: 10px;
+    border: 1px solid black;
+    box-shadow: 0 0px 30px black;
+    border-radius: 5px;
+    text-align: justify;
+    width: 100%;
+}
+@media(min-width: 768px) {
+    .curso-presentation {
+        flex-direction: row;
+        align-items: flex-start;
+        width: 95%;
+        padding: 20px;
+    }
+
+    .image-section {
+        margin-right: 20px;
+        margin-bottom: 0;
+        margin-top: 20px;
+    }
+
+    .description-section {
+        width: 70%;
+    }
+}
+@media(min-width: 992px) {
+    .presentation-container {
+        width: 1140px;
+        margin: 0 auto;
+    }
+    .description-section {
+        width: 100%;
+    }
+    
+}

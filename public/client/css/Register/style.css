@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+}
+*{
+    font-family: 'Poppins';
+}
+
+body{
+
+    background: radial-gradient(circle, #ae70ff, black);
+}
+@media (min-width:992px) {
+    body{
+        background: #242426;
+    }    
+}

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../css/admin-course/style.css">
+    <link rel="stylesheet" href="../../css/all.min.css">
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="../css/admin-course/header.css">
+    <link rel="stylesheet" href="../css/admin-course/presentation.css">
+    <link rel="stylesheet" href="../css/admin-course/lessons.css">
+    <link rel="stylesheet" href="../css/admin-course/footer.css">
+    <link rel="stylesheet" href="../css/admin-course/admin-menu.css">
+    <link rel="stylesheet" href="../css/admin-course/eliminate-popup.css">
+    <link rel="stylesheet" href="../css/admin-course/leccion-add-popup.css">
+    <link rel="stylesheet" href="../css/admin-course/leccion-name-popup.css">
+    <link rel="stylesheet" href="../css/admin-course/leccion-name-popup.css">
+    <link rel="stylesheet" href="../css/admin-course/leccion-popup.css">
+    <link rel="stylesheet" href="../css/admin-course/leccion-edit-popup.css">
+    <link rel="stylesheet" href="../css/admin-course/leccion-description-popup.css">
+    <link rel="stylesheet" href="../css/admin-course/leccion-image-popup.css">
+    <title>Learning Online</title>
+</head>
+<body>
+
+
+<header class="header">
+    <div class="header-container">
+        <div class="header-logo">
+            <h1>LearningOnline</h1>
+        </div>
+        <nav class="header-nav">
+            <label for="menu" id="menu-switch" aria-label="Menu"><i class="fas fa-bars"></i></label>
+            <input type="checkbox" id="menu">
+            <ul class="ul-nav">
+                <li><a href="admin-page.html">Dashboard</a></li>
+                <li class="user-info">
+                    <a class="user-bubble" id="user-link" href="#" onclick="logoutAndRedirect()">
+                        <i class="fas fa-user"></i> <span id="username-display">ERROR</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<section class="admin-menu">
+    <div class="admin-menu-container">
+        <div class="admin-options">
+            <div class="admin-menu-banner">
+                <h2>Admin Options</h2>
+            </div>
+            <div class="admin-menu-options">
+                <button class="menu-admin-button" id="btn-eliminate"><i class="fa-solid fa-x"></i> Eliminar Curso</button>
+                <button class="menu-admin-button" id="btn-add"><i class="fa-solid fa-plus"></i> Agregar Leccion</button>
+                <button class="menu-admin-button" id="btn-edit-name"><i class="fa-solid fa-edit"></i> Editar Nombre</button>
+                <button class="menu-admin-button" id="btn-edit-photo"><i class="fa-solid fa-image"></i> Editar Foto</button>
+                <button class="menu-admin-button" id="btn-edit-description"><i class="fa-solid fa-file-signature"></i> Editar Descripcion</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="presentation">
+    <div class="presentation-container">
+        <div class="curso-presentation">
+            <div class="image-section">
+                <img src="../../assets/images/course.png" alt="Java Logo">
+                <h1>Python</h1>
+            </div>
+            <div class="description-section">
+                <p>Descripción del curso...</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="lessons">
+    <div class="lessons-container">
+        <div id="lessons-list" class="lessons-activity">
+        </div>
+    </div>
+</section>
+
+<div class="eliminate-popup">
+    <div class="eliminate-popup-container">
+        <div class="eliminate-popup-box">
+            <div class="warning-icon">
+                <img src="../../assets/images/Alert.png" alt="Advertencia">
+            </div>
+            <h2>¿Seguro que quieres Eliminar el Curso?</h2>
+            <div class="eliminate-popup-buttons">
+                <button class="btn cancel">Volver</button>
+                <button class="btn delete">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="leccion-add-popup">
+    <div class="leccion-add-container">
+        <div class="leccion-add-box">
+            <h2>Agregar Lección</h2>
+            <form action="" class="leccion-add-form">
+                <label for="leccion-name">Nombre de la Lección:</label>
+                <input type="text" id="leccion-name" class="leccion-name">
+
+                <label for="leccion-descripcion">Descripcion:</label>
+                <input type="text" id="leccion-descripcion" class="leccion-name">
+
+
+                <label for="type-content">Tipo de Contenido:</label>
+                <select id="type-content" class="type-content">
+                    <option value="Video">Video</option>
+                    <option value="Texto">Texto</option>
+                </select>
+
+                <label for="leccion-content">Contenido:</label>
+                <input type="text" id="leccion-content" class="leccion-content">
+
+                <label for="leccion-orden">Orden:</label>
+                <input type="number" id="leccion-orden" class="leccion-orden">
+
+                <div class="form-buttons">
+                    <button type="button" class="btn cancelar-btn">Cancelar</button>
+                    <button type="submit" class="btn agregar-btn">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="curso-name-popup" >
+    <div class="curso-name-container">
+        <div class="curso-name-box">
+            <h2>Editar Nombre del Curso</h2>
+            <form action="" class="curso-name-form">
+                <label for="curso-name-popup">Nombre del curso:</label>
+                <input type="text" id="curso-name-popup" class="curso-name">
+
+                <div class="form-buttons">
+                    <button type="button" class="btn cancelar-btn">Cancelar</button>
+                    <button type="submit" class="btn agregar-btn">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="imagen-image-popup">
+    <div class="imagen-image-container">
+        <div class="imagen-image-box">
+            <h2>Subir Imagen del curso</h2>
+            <form action="" class="imagen-image-form">
+                <label for="imagen-image-popup">Selecciona una imagen:</label>
+                <input type="file" id="imagen-image-popup" class="imagen-image" accept="image/*">
+
+                <div class="form-buttons">
+                    <button type="button" class="btn cancelar-btn">Cancelar</button>
+                    <button type="submit" class="btn agregar-btn">Subir</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="curso-description-popup">
+    <div class="curso-description-container">
+        <div class="curso-description-box">
+            <h2>Editar Descripción de la Lección</h2>
+            <form action="" class="curso-description-form">
+                <label for="curso-description-popup">Descripción de la Lección:</label>
+                <textarea id="curso-description-popup" class="curso-description" rows="5"></textarea>
+
+                <div class="form-buttons">
+                    <button type="button" class="btn cancelar-btn">Cancelar</button>
+                    <button type="submit" class="btn agregar-btn">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="leccion-edit-popup" >
+    <div class="leccion-edit-container">
+        <div class="leccion-edit-box">
+            <h2>Editar Lección</h2>
+            <form action="" class="leccion-edit-form">
+                <label for="edit-leccion-name">Nombre de la Lección:</label>
+                <input type="text" id="edit-leccion-name" class="leccion-name">
+
+                <label for="edit-leccion-descripcion">Descripcion:</label>
+                <input type="text" id="edit-leccion-descripcion" class="leccion-name">
+
+                <label for="edit-type-content">Tipo de Contenido:</label>
+                <select id="edit-type-content" class="type-content">
+                    <option value="Video">Video</option>
+                    <option value="Texto">Texto</option>
+                </select>
+
+                <label for="edit-leccion-content">Contenido:</label>
+                <input type="text" id="edit-leccion-content" class="leccion-content">
+
+                <label for="edit-leccion-orden">Orden:</label>
+                <input type="number" id="edit-leccion-orden" class="leccion-orden">
+
+                <div class="form-buttons">
+                    <button type="button" class="btn cancelar-btn">Cancelar</button>
+                    <button type="submit" class="btn agregar-btn">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="leccion-popup">
+    <div class="leccion-popup-container">
+        <div class="leccion-popup-box">
+            <div class="warning-icon">
+                <img src="../../assets/images/Alert.png" alt="Advertencia">
+            </div>
+            <h2>¿Seguro que quieres Eliminar la Lección?</h2>
+            <div class="leccion-popup-buttons">
+                <button class="btn cancel">Cancelar</button>
+                <button class="btn delete">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <h1>© Copyright LearningOnline. All Rights Reserved</h1>
+            <h1>Designed by Luis Enrique Gil</h1>
+        </div>
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+</body>
+<script src="../js/admin-course/curso-eliminate.js"></script>
+<script src="../js/admin-course/leccion-add-popup.js"></script>
+<script src="../js/admin-course/curso-name-popup.js"></script>
+<script src="../js/admin-course/leccion-popup-eliminate.js"></script>
+<script src="../js/admin-course/leccion-edit-popup.js"></script>
+<script src="../js/admin-course/curso-description-popup.js"></script>
+<script src="../js/admin-course/curso-image-popup.js"></script>
+<script src="../js/admin-course/curso-load.js"></script>
+<script src="../js/admin-course/leccion-load.js"></script>
+<script src="../js/admin-course/user-load.js"></script>
+<script src="../../client/js/logout.js"></script>
+</html>

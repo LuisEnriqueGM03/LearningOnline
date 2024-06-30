@@ -1,0 +1,154 @@
+.login-container,
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 30px black;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.login-container h2 {
+  color: #fff;
+  font-size: 40px;
+  margin-top: 50px
+}
+
+.login-container img {
+  margin-top: 50px;
+  width: 50%;
+  height: 100%
+}
+
+.login-input .btn,
+.login-input input {
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  color: #fff
+}
+
+.login-input {
+  padding: 10px
+}
+
+.login-input label {
+  color: #fff;
+  font-size: 28px
+}
+
+.login-input input {
+  border-radius: 5px;
+  border: 1px solid #fff;
+  background: #000;
+  padding-left: 10px
+}
+
+.login-input input::placeholder {
+  color: #fff;
+  font-size: 18px
+}
+
+.login-input .btn {
+  border-radius: 5px;
+  border: none;
+  background: #ae70ff;
+  font-size: 20px
+}
+
+.login-input .btn:hover {
+  background: white;
+  color: #ae70ff;
+  box-shadow: 0 0 30px black;
+}
+
+.login-register p {
+  color: #fff;
+  font-size: 20px;
+  margin-top: 30px
+}
+
+.login-register a {
+  background-color: #ae70ff;
+  padding: 10px;
+  background: #fff;
+  text-decoration: none;
+  border-radius: 10px
+}
+
+.login-register a:hover {
+  background: white;
+  color: #ae70ff;
+  box-shadow: 0 0 30px black;
+}
+
+@media (min-width:992px) {
+  .login {
+    height: 600px
+  }
+
+  .login-container {
+    width: 1000px; 
+    flex-direction: row;
+    margin: 100px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 30px black;
+    background: radial-gradient(circle, #ae70ff, black);
+    padding: 0px;
+}
+
+  .login-container img {
+    width: 40%;
+    height: 80%;
+    margin-top: 0
+  }
+
+  .login-form {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #fff;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0 0 30px black;
+    margin-top: 0px;
+  }
+
+  .login-container h2 {
+    color: #ae70ff;
+    margin-top: 0
+  }
+
+  .login-input label {
+    color: #000;
+    font-size: 28px
+  }
+
+  .login-register p {
+    color: #000
+  }
+
+  .login-input input {
+    border-radius: 5px;
+    border: 1px solid #000;
+    color: #000;
+    background: #fff;
+    padding-left: 10px
+  }
+
+  .login-input input::placeholder {
+    color: #000;
+    font-size: 18px
+  }
+
+  .login-register a {
+    color: #fff;
+    padding: 10px;
+    background: #ae70ff;
+    border-radius: 20px
+  }
+}

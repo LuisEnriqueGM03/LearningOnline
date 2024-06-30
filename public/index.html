@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/banner.css">
+    <link rel="icon" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/category.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <title>Learning Online</title>
+</head>
+
+<body>
+
+        <header class="header">
+            <div class="header-container">
+                <div class="header-logo">
+                    <h1>LearningOnline</h1>
+                </div>
+                <nav class="header-nav">
+                    <label for="menu" id="menu-switch"><i class="fas fa-bars"></i></label>
+                    <input type="checkbox" id="menu">
+                    <ul class="ul-nav">
+                        <li><a href="#banner">Inicio</a></li>
+                        <li><a href="#about">Detalles</a></li>
+                        <li><a href="#category">Categoria</a></li>
+                        <li><a href="#contact">Contactanos</a></li>
+                        <li><a href="client/pages/login.html" id="acceder">Acceder</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="banner" id="banner">
+            <div class="banner-container">
+                <img src="assets/images/logo2-background.png" alt="logo">
+                <div class="banner-text">
+                    <h2>Bienvenido a Learning Online</h2>
+                    <h4>"Aprende con las mejores clases en linea"</h4>
+                    <a href="#about" class="btn" id="btn-banner">Descubre</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="about-container">
+                <div class="about-text">
+                    <div class="about-text-title-2">
+                        <h2>¿Qué es Learning Online?</h2>
+                        <p>
+                            "Learning Online es una plataforma confiable para todas tus necesidades de aprendizaje en
+                            línea.
+                            Utilizamos una plataforma digital intuitiva que conecta a estudiantes con clases grabadas
+                            por expertos
+                            para proporcionar cursos rápidos y eficientes. Con nosotros, aprender es tan fácil como un
+                            clic."
+                        </p>
+                    </div>
+                    <div class="about-text-title-3">
+                        <h2>¿Como empezar?</h2>
+                        <p>
+                            "Para comenzar tu viaje de aprendizaje con nosotros, primero necesitas crear una cuenta.
+                            Una vez hecho esto, podrás explorar nuestras diversas categorías de cursos y seleccionar
+                            aquellos que más te interesen. Una vez que hayas elegido tu clase, podrás seguir fácilmente
+                            la ruta de aprendizaje que hemos diseñado para ti."
+                        </p>
+                    </div>
+                    <a href="/root/client/pages/Register.html" class="btn">Registrarse</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="category" id="category">
+    <div class="line"></div>
+    <div class="category-container">
+        <h2>Elige la categoria</h2>
+        <div class="category-cards">
+            <!-- Las tarjetas de categoría se generarán dinámicamente aquí -->
+        </div>
+    </div>
+    </section>
+
+        <section class="contact" id="contact">
+            <div class="line"></div>
+            <div class="contact-container">
+                <div class="contact-text">
+                    <h2>Contactanos para mas informacion</h2>
+                    <h4>
+                        "No dude en enviar sus consultas a traves de nuestro formulario de contacto."
+                    </h4>
+                    <a href="https://mail.google.com/mail/?view=cm&to=lerningonline42@gmail.com" class="btn">Contactanos</a>
+                </div>
+            </div>
+            <div class="line"></div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <h1>© Copyright LearningOnline. All Rights Reserved</h1>
+                    <h1>Designed by Luis Enrique Gil</h1>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </footer>
+
+</body>
+<script type="module" src="js/loadCategory.js"></script>
+<script src="js/CurrentUser.js"></script>
+</html>

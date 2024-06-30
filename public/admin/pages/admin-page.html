@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../css/admin-page/style.css" type="text/css">
+    <link rel="stylesheet" href="../../css/all.min.css" type="text/css">
+    <link rel="stylesheet" href="../../css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="../../css/fonts.css" type="text/css">
+    <link rel="stylesheet" href="../css/admin-page/footer.css" type="text/css">
+    <link rel="stylesheet" href="../css/admin-page/header.css" type="text/css">
+    <link rel="stylesheet" href="../css/admin-page/my-course.css" type="text/css">
+    <link rel="stylesheet" href="../css/admin-page/presentation.css" type="text/css">
+    <link rel="stylesheet" href="../css/admin-page/eliminate-popup.css" type="text/css">
+    <link rel="stylesheet" href="../css/admin-page/curso-add-popup.css" type="text/css">
+    <title>Learning Online</title>
+</head>
+
+<body>
+<header class="header">
+    <div class="header-container">
+        <div class="header-logo">
+            <h1>LearningOnline</h1>
+        </div>
+        <nav class="header-nav">
+            <label for="menu" id="menu-switch" aria-label="Menu"><i class="fas fa-bars"></i></label>
+            <input type="checkbox" id="menu">
+            <ul class="ul-nav">
+
+                <li id="no-slide"><a href="admin-page.html">Cursos</a></li>
+                <li id="no-slide"><a href="admin-page-category.html">Categorias</a></li>
+                <li class="user-info">
+                    <a class="user-bubble" id="user-link" href="#" onclick="logoutAndRedirect()">
+                        <i class="fas fa-user"></i> <span id="username-display">ERROR</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<section class="presentation">
+    <div class="presentation-container">
+        <div class="presentation-box">
+            <h2>Admin Dashboard</h2>
+        </div>
+    </div>
+</section>
+
+
+<section class="my-course">
+    <div class="my-course-container">
+
+        <aside>
+            <div class="aside-items">
+                <div class="aside-item">
+                    <a id="toggle-aside-menu" " class="btn-icon">
+                        <i class="fas fa-bars"></i>
+                        <span class="icon-label">Menú</span>
+                    </a>
+                </div>
+                <div class="aside-item">
+                    <a id="toggle-aside"  href="admin-page.html"  class="btn-class">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="icon-label">Cursos</span>
+                    </a>
+                </div>
+
+               <!-- <div class="aside-item">
+                    <a id="toggle-aside" class="btn-icon" href="../pages/client-descubrir.html">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="icon-label">Usuarios</span>
+                    </a>
+                </div>-->
+
+                <div class="aside-item">
+                    <a id="toggle-aside" class="btn-icon" href="admin-page-category.html">
+                        <i class="fa-solid fa-book"></i>
+                        <span class="icon-label">Categorias</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <div class="my-course-box">
+            <h2>Cursos</h2>
+            <div class="my-course-header">
+                <div class="my-course-search">
+                    <input type="text" placeholder="Buscar Clase" class="search-input" id="search-input">
+                    <button class="search-btn" id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+
+                <div class="my-course-add">
+                    <button class="btn" id="btn-add-curso">Agregar Curso</button>
+                </div>
+            </div>
+            <div class="my-course-cards" id="course-container">
+                <!-- Aquí se renderizarán las tarjetas de los cursos -->
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<div class="eliminate-popup">
+    <div class="eliminate-popup-container">
+        <div class="eliminate-popup-box">
+            <div class="warning-icon">
+                <img src="../../assets/images/Alert.png" alt="Advertencia">
+            </div>
+            <h2>¿Seguro que quieres Eliminar el Curso?</h2>
+            <div class="eliminate-popup-buttons">
+                <button class="btn cancel">Volver</button>
+                <button class="btn delete">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="curso-add-popup" >
+    <div class="curso-add-container">
+        <div class="curso-add-box">
+            <h2>Agregar Curso</h2>
+            <form id="curso-form" class="curso-add-form">
+                <label for="curso-name">Nombre del Curso:</label>
+                <input type="text" id="curso-name" class="curso-name">
+
+                <label for="curso-description">Descripción:</label>
+                <textarea id="curso-description" class="curso-description" rows="4"></textarea>
+
+                <label for="curso-image">Imagen del Curso:</label>
+                <input type="file" id="curso-image" class="curso-image" accept="image/*">
+
+                <label for="curso-category">Categoría:</label>
+                <select id="curso-category" class="curso-category">
+                    <!-- Las categorías se cargarán dinámicamente aquí -->
+                </select>
+
+                <div class="form-buttons">
+                    <button type="button" class="btn cancelar-btn">Cancelar</button>
+                    <button type="submit" class="btn agregar-btn">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <h1>© Copyright LearningOnline. All Rights Reserved</h1>
+            <h1>Designed by Luis Enrique Gil</h1>
+        </div>
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+</body>
+<script src="../js/admin-page/menu-slide.js"></script>
+<script src="../js/admin-page/curso-create-popup.js"></script>
+<script src="../js/admin-page/curso-load.js"></script>
+<script src="../js/admin-page/curso-eliminate-popup.js"></script>
+<script src="../js/admin-page/user-load.js"></script>
+<script src="../../js/CurrentUser.js"></script>
+<script src="../../client/js/logout.js"></script>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../css/client-categoria-curso/style.css">
+    <link rel="stylesheet" href="../../css/all.min.css">
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="../css/client-categoria-curso/header.css">
+    <link rel="stylesheet" href="../css/client-categoria-curso/search-course.css">
+    <link rel="stylesheet" href="../css/client-categoria-curso/course.css">
+    <title>Learning Online</title>
+</head>
+
+<body>
+    <main class="main-container">
+        <header class="header">
+            <div class="header-container">
+                <div class="header-logo">
+                    <h1>LearningOnline</h1>
+                </div>
+                <nav class="header-nav">
+                    <label for="menu" id="menu-switch" aria-label="Menu"><i class="fas fa-bars"></i></label>
+                    <input type="checkbox" id="menu">
+                    <ul class="ul-nav">
+                        <li><a href="../../index.html">Inicio</a></li>
+                        <li><a href="../../../index.html#contact">Contáctanos</a></li>
+                        <li id="no-slide"><a href="../pages/client-page.html">Mis Cursos</a></li>
+                        <li id="no-slide-categoria"><a href="../pages/client-descubrir.html">Buscar Categorías</a></li>
+                        <li class="user-info">
+                            <a class="user-bubble" href="../../../index.html#categories">
+                                <i class="fas fa-user"></i> User
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="search-course">
+            <div class="search-course-container">
+                <h2>Busca tu curso</h2>
+                <h4>Encuentra el curso que necesitas</h4>
+                <form action="" method="POST">
+                    <input type="text" name="search" id="search" placeholder="Escribe el curso...">
+                    <input type="submit" value="Buscar" class="btn">
+                </form>
+            </div>
+        </section>
+        <section class="course">
+            <div class="course-container">
+                <div class="course-cards carousel">
+                    <a href="curso.html">
+                        <div class="course-card carousel-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/640px-Postgresql_elephant.svg.png" alt="Curso de Python">
+                            <div class="course-text">
+                                <h3>Postgres</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="course-card carousel-item">
+                            <img src="../../assets/images/course2.png" alt="Curso de C++">
+                            <div class="course-text">
+                                <h3>C++</h3>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="">
+                        <div class="course-card carousel-item">
+                            <img src="../../assets/images/course3.png" alt="Curso de HTML">
+                            <div class="course-text">
+                                <h3>HTML</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="course-card carousel-item">
+                            <img src="../../assets/images/course4.png" alt="Curso de CSS">
+                            <div class="course-text">
+                                <h3>CSS</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        
+
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+.my-course {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px
+}
+
+.my-course-container {
+    border-radius: 10px;
+    width: 90%;
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 0 30px #000;
+    background-color: #2f2f31
+}
+
+.my-course-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center
+}
+
+aside {
+    display: none
+}
+
+.my-course-header {
+    margin-bottom: 20px
+}
+
+.my-course-search {
+    margin-bottom: 15px
+}
+
+.my-course-search input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+    margin-bottom: 15px
+}
+
+.my-course-add button,
+.my-course-search button {
+    border-radius: 5px;
+    background-color: #ae70ff;
+    color: #fff;
+    cursor: pointer
+}
+
+.my-course-search button {
+    padding: 13px;
+    border: none
+}
+
+.my-course-add button {
+    padding: 15px 30px;
+    border: none
+}
+
+.my-course-card {
+    box-shadow: 0 0 30px #000;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: #242426;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: 20px
+}
+
+#text-course,
+.my-course-cards #text-category {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 10px
+}
+
+.my-course-cards #text-category:before {
+    content: "Categoria: ";
+    color: #ae70ff
+}
+
+.my-course-cards #text-course:before {
+    content: "Curso: ";
+    color: #ae70ff
+}
+
+
+.my-course-cards button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ae70ff;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px
+}
+.my-course-card a{
+    text-decoration: none;
+    color:inherit;
+}
+@media (min-width:768px) {
+
+    .my-course-box,
+    .my-course-card,
+    aside {
+        box-shadow: 0 0 30px #000
+    }
+
+    .my-course-container {
+        width: 90%;
+        max-width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        text-align: left
+    }
+
+    aside {
+        display: block;
+        width: 10%;
+        text-align: center;
+        border: 1px solid #000;
+        border-radius: 10px 0 0 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: width .2s ease-out
+    }
+    .aside-items{
+        margin-top: 80px;
+    }
+
+    .my-course-box {
+        width: 90%;
+        border: 1px solid #000;
+        border-radius: 0 10px 10px 0;
+        padding: 20px
+    }
+
+    aside.expanded .icon-label {
+        display: inline;
+        max-width: 60px
+    }
+
+    .icon-label {
+        display: none;
+        margin-left: 8px;
+        font-size: 12px;
+        width: 60px
+    }
+
+    .btn-class,
+    .btn-icon {
+        padding: 15px;
+        cursor: pointer;
+        font-size: 10px;
+        margin: 10px auto auto;
+        display: flex
+    }
+
+    .btn-icon {
+        background-color: #ae70ff;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        justify-content: center
+    }
+
+    .btn-class {
+        background-color: #fff;
+        border: none;
+        border-radius: 5px;
+        color: #000;
+        justify-content: center
+    }
+
+    .my-course-header {
+        display: flex;
+        justify-content: space-between;
+        margin: 0
+    }
+
+    .my-course-search {
+        margin-bottom: 15px;
+        width: 430px
+    }
+
+    .my-course-search input {
+        width: 80%
+    }
+
+    .my-course-add button {
+        padding: 13px 20px
+    }
+
+    .my-course-card {
+        border-radius: 10px;
+        padding: 30px;
+        background-color: #242426;
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between
+    }
+
+    .card-item-button {
+        display: flex;
+        flex-direction: column
+    }
+
+
+    .my-course-cards button {
+        margin-bottom: 10px
+    }
+}
+
+@media (min-width:992px) {
+    .my-course-container {
+        width: 1140px
+    }
+
+    .my-course-card:hover {
+        border: 3px solid #ae70ff;
+        box-shadow: 0 0 20px #ae70ff;
+        transform: scale(1.02)
+    }
+
+    .icon-label {
+        width: 100px
+    }
+
+    .btn-icon:hover {
+        background-color: #8e4db7
+    }
+
+    aside.expanded .icon-label {
+        max-width: 80px
+    }
+
+    .my-course-header {
+        display: flex;
+        justify-content: center;
+        margin: 0
+    }
+
+    .my-course-search {
+        margin-bottom: 15px;
+        width: 700px
+    }
+
+    .my-course-add button:hover,
+    .my-course-search button:hover {
+        background-color: #fff;
+        color: #ae70ff
+    }
+
+    .my-course-cards {
+        display: flex;
+        flex-wrap: wrap
+    }
+
+    .my-course-card {
+        box-shadow: 0 0 30px #000;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #242426;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        transition: transform .5s, box-shadow .5s, border .5s
+    }
+
+    .card-item-button {
+        display: flex;
+        flex-direction: row
+    }
+
+
+    .my-course-cards button {
+        margin-bottom: 10px
+    }
+}

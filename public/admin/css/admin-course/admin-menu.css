@@ -1,0 +1,68 @@
+.admin-menu-container {
+    margin-top: 20px;
+}
+.admin-options{
+    border-radius: 10px;
+    width: 90%;
+    text-align: center;
+    padding: 20px;
+    margin: 10px auto;
+    box-shadow: 0 0 30px black;
+    background-color: #2f2f31;
+}
+.admin-menu-banner h2{
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+.admin-menu-options{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.admin-menu-options button{
+    border-radius: 5px;
+    background-color: #ae70ff;
+    color: white;
+    cursor: pointer;
+    padding: 15px 30px;
+    border: none;
+}
+.admin-menu-options #btn-eliminate{
+    background-color: #ff0000;
+}
+@media (min-width: 768px) {
+    .admin-menu-options {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .admin-menu-options button {
+        width: 170px;
+    }
+}
+@media (min-width: 992px) {
+    .admin-menu-container {
+        width: 1140px;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+    .admin-options{
+        width: 1045px;
+    }
+    .admin-menu-options #btn-eliminate:hover    {
+        background-color: white;
+        color: #ff0000;
+        transition: 0.5s;
+    }
+    .admin-menu-options button:hover {
+        background-color: white;
+        color: #ae70ff;
+        transition: 0.5s;
+    }
+
+
+}

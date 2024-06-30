@@ -1,0 +1,37 @@
+.presentation {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.presentation-container{
+    border-radius: 10px;
+    width: 90%;
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 0 30px black;
+    background-color: #2f2f31;
+}
+
+.presentation h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .presentation-container {
+        width: 90%;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+}
+@media (min-width: 992px) {
+    .presentation-container {
+        width: 1140px;
+    }
+}

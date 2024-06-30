@@ -1,0 +1,104 @@
+.curso-name-popup {
+    display: none; /* Cambia a 'block' para mostrar */
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.curso-name-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.curso-name-box {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #000;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.curso-name-box h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.curso-name-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.curso-name-form label {
+    text-align: left;
+    font-weight: bold;
+}
+
+.curso-name-form input {
+    padding: 10px;
+    border: 1px solid #ae70ff;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+@media (min-width: 768px) {
+    .curso-name-box {
+        width: 400px;
+    }
+
+    .btn {
+        padding: 15px 25px;
+    }
+
+    .curso-name-box h2 {
+        font-size: 22px;
+    }
+
+    .curso-name-form label {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 992px) {
+    .curso-name-box {
+        width: 500px;
+    }
+
+    .btn {
+        padding: 20px 30px;
+    }
+
+    .curso-name-box h2 {
+        font-size: 24px;
+    }
+
+    .curso-name-form label {
+        font-size: 20px;
+    }
+
+}

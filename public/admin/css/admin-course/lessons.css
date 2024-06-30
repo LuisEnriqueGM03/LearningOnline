@@ -1,0 +1,156 @@
+
+.lessons-container {
+    padding: 20px;
+}
+
+.lessons-activity {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 0px 30px black;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #2f2f31;
+}
+
+.lesson {
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 0 0px 10px black;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
+}
+
+.lesson:hover {
+    border: 3px solid #ae70ff;
+    box-shadow: 0 0 20px #ae70ff; 
+    transform: scale(1.02);
+}
+
+.lesson-info {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+}
+.lesson-admin {
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: center;
+
+}
+.lesson-admin button {
+    background: #ae70ff;
+    color: white;
+    border: none;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 16px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+
+.lesson-admin #btn-edit:after{
+    content:" Editar"
+}
+.lesson-admin #btn-delete:after{
+    content:" Borrar"
+}
+
+.lessons-activity p{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+}
+.play-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+    color: #ae70ff;
+}
+.menu-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+    color: #ae70ff;
+}
+
+.document-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+    color: #ae70ff;
+}
+
+.toggle-switch {
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+.lessons-activity a {
+    text-decoration: none;
+   color: black;
+}
+
+@media(min-width: 768px) {
+    .lessons-container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .lesson {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+}
+
+@media(min-width: 992px) {
+  
+    .lessons-container {
+        padding-left: 50px;
+        padding-right: 50px;
+        
+    }
+    .lessons-container {
+        width: 1140px;
+        margin: 0px auto;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .lesson-admin #btn-edit:hover{
+        background: white;
+        color: #ae70ff;
+        transition: 0.8s;
+    }
+    .lesson-admin #btn-delete:hover{
+        background: white;
+        color: #ae70ff;
+        transition: 0.8s;
+    }
+
+    .lessons-activity {
+        width: 100%;
+    }
+}

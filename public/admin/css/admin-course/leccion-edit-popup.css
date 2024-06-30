@@ -1,0 +1,105 @@
+.leccion-edit-popup {
+    display: none; /* Cambia a 'block' para mostrar */
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.leccion-edit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.leccion-edit-box {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #000;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.leccion-edit-box h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.leccion-edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.leccion-edit-form label {
+    text-align: left;
+    font-weight: bold;
+}
+
+.leccion-edit-form input,
+.leccion-edit-form select {
+    padding: 10px;
+    border: 1px solid #ae70ff;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.btn.cancelar-btn {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.btn.agregar-btn {
+    background-color: #ae70ff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .leccion-edit-box {
+        width: 450px;
+    }
+    .btn.agregar-btn {
+        padding: 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    .leccion-edit-box {
+        width: 550px;
+    }
+    .leccion-edit-form {
+        gap: 10px;
+    }
+    .leccion-edit-form input,
+    .leccion-edit-form select {
+        padding: 15px;
+    }
+    .leccion-edit-box h2 {
+        font-size: 24px;
+    }
+    .btn.cancelar-btn {
+        padding: 20px;
+    }
+    .btn.agregar-btn {
+        padding: 20px;
+    }
+    .btn.agregar-btn:hover {
+        background-color: #fff;
+        color: #ae70ff;
+        border: 1px solid #ae70ff;
+        transition: background-color 0.3s ease;
+    }
+}
