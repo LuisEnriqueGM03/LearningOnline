@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/client-page/footer.css" type="text/css">
     <link rel="stylesheet" href="../css/client-page/header.css" type="text/css">
     <link rel="stylesheet" href="../css/client-page/my-course.css" type="text/css">
+    <link rel="stylesheet" href="../../client/css/client-page/eliminate-popup.css" type="text/css">
     <title>Learning Online</title>
 </head>
 
@@ -64,25 +65,32 @@
                 <div class="my-course-box">
                     <h2>Mis Cursos</h2>
                     <div class="my-course-cards">
-                        <div class="my-course-card">
-                            <a href="client-curso.html" class="course-link">
-                                <h3>Python
-                                </h3>
-                                <div class="image-container">
-                                    <img src="../../assets/images/course.png" alt="Java Logo">
-                                </div>
-                                <div class="footer-bar">
-                                    <progress value="70" max="100"></progress>
-                                    <span class="progress-text">70%</span>
-                                </div>
-                            </a>
-                            <button class="btn-del">X</button>
+                        <div class="my-course-cards">
+                            <!-- Los cursos se renderizarán aquí -->
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
         </section>
+
+
+        <div class="eliminate-popup">
+            <div class="eliminate-popup-container">
+                <div class="eliminate-popup-box">
+                    <div class="warning-icon">
+                        <img src="../../assets/images/Alert.png" alt="Advertencia">
+                    </div>
+                    <h2>¿Seguro que quieres salir del Curso?</h2>
+                    <div class="eliminate-popup-buttons">
+                        <button class="btn cancel">Volver</button>
+                        <button class="btn delete">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-logo">
@@ -97,6 +105,8 @@
             </div>
         </footer>
 </body>
-<script src="../js/client-page.js"></script>
+<script src="../js/client-page/client-page.js"></script>
+<script src="../js/client-page/client-load-curso.js"></script>
+<script src="../js/client-page/client-eliminate-popup.js"></script>
 <script src="../../js/CurrentUser.js"></script>
 </html>

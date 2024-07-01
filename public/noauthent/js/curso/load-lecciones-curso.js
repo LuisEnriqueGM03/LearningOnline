@@ -50,6 +50,7 @@ async function displayLessons() {
             noLessonsMessage.textContent = 'No existe ninguna lección disponible para este curso.';
             lessonsList.appendChild(noLessonsMessage);
         } else {
+            lessons.sort((a, b) => a.orden - b.orden);
             lessons.forEach(lesson => {
                 const lessonElement = createLessonElement(lesson);
                 lessonsList.appendChild(lessonElement);
@@ -61,3 +62,4 @@ async function displayLessons() {
 }
 
 document.addEventListener('DOMContentLoaded', displayLessons);
+

@@ -2,6 +2,9 @@
     background: radial-gradient(circle, #ae70ff, black);
     height: 500px;
 }
+.banner-container {
+ padding: 20px;
+}
 .banner-container img{
     width: 60%;
     height: 60%;

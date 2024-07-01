@@ -7,7 +7,7 @@ fetch('http://localhost:4000/categoria')
             const imageUrl = `data:image/png;base64,${categoria.imagen}`;
 
             const categoryCardLink = document.createElement('a');
-            categoryCardLink.href = `client/pages/categoria-curso.html?id=${categoria.id}`;
+            categoryCardLink.href = `noauthent/pages/categoria-curso.html?id=${categoria.id}`;
 
             const categoryCard = document.createElement('div');
             categoryCard.className = 'category-card';

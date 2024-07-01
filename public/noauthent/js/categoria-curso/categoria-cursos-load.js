@@ -32,15 +32,16 @@ async function fetchCursosPorCategoria(categoriaId) {
 
 async function handleSearch(event) {
     event.preventDefault();
-    const searchTerm = document.getElementById('search').value;
+    const searchTerm = document.getElementById('search').value.toLowerCase();
     try {
-        const response = await fetch(`http://localhost:4000/curso/search/${searchTerm}`);
-        const data = await response.json();
-        console.log('Cursos obtenidos por búsqueda:', data); // Depuración
-        if (data.error) {
-            displayError(data.error, 'search');
+        const response = await fetch('http://localhost:4000/curso/');
+        const cursos = await response.json();
+        const filteredCursos = cursos.filter(curso => curso.nombrecurso.toLowerCase().includes(searchTerm));
+        console.log('Cursos obtenidos por búsqueda:', filteredCursos); // Depuración
+        if (filteredCursos.length === 0) {
+            displayError('No se encontraron cursos.', 'search');
         } else {
-            displayCursos(data, 'search');
+            displayCursos(filteredCursos, 'search');
         }
     } catch (error) {
         console.error('Error al buscar los cursos:', error);

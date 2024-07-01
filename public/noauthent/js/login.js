@@ -20,13 +20,12 @@ document.getElementById('login-form').addEventListener('submit', async function(
 
         if (response.ok) {
             const result = await response.json();
-            alert('Login exitoso');
             localStorage.setItem('user', JSON.stringify(result));
 
             if (result.tipoUsuario === 'Administrador') {
-                window.location.href = `../../admin/pages/admin-page.html`;
+                window.location.href = '../../admin/pages/admin-page.html';
             } else if (result.tipoUsuario === 'Estudiante') {
-                window.location.href = `../pages/client-page.html`;
+                window.location.href = '../../client/pages/client-page.html';
             } else {
                 document.getElementById('error').textContent = 'Tipo de usuario desconocido';
             }
@@ -37,26 +36,5 @@ document.getElementById('login-form').addEventListener('submit', async function(
     } catch (error) {
         console.error('Error:', error);
         document.getElementById('error').textContent = 'Error al iniciar sesión';
-    }
-});
-
-
-// Ejemplo de uso
-document.addEventListener('DOMContentLoaded', function() {
-    const currentUser = getCurrentUser();
-
-    if (!currentUser) {
-        // Redirigir a la página de inicio de sesión si no hay un usuario autenticado
-        window.location.href = `../pages/login.html`;
-    } else {
-        console.log('Usuario actual:', currentUser);
-        // Redirección basada en el tipo de usuario
-        if (currentUser.tipoUsuario === 'Administrador') {
-            window.location.href = `../../admin/pages/admin-page.html`;
-        } else if (currentUser.tipoUsuario === 'Estudiante') {
-            window.location.href = `../pages/client-page.html`;
-        } else {
-            console.log('Tipo de usuario desconocido');
-        }
     }
 });

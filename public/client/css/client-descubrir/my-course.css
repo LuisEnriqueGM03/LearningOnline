@@ -7,7 +7,7 @@
 
 .my-course-container {
     border-radius: 10px;
-    width: 90%; 
+    width: 90%;
     text-align: center;
     padding: 20px;
     margin: 20px auto;
@@ -111,13 +111,13 @@ aside {
         max-width: 100%;
         display: flex;
         justify-content: flex-start; /* Align containers side by side without gap */
-        text-align: left; 
+        text-align: left;
     }
 
     aside {
         display: block; /* Ensure aside is displayed */
         width: 10%;
-        text-align: center; 
+        text-align: center;
         border: 1px solid black;
         border-radius: 10px 0 0 10px;
         box-shadow: 0 0 30px black;
@@ -180,9 +180,9 @@ aside {
         justify-content: center;
         margin: auto; /* Center the button */
         margin-top: 10px;
-       
+
     }
-    
+
 
 }
 

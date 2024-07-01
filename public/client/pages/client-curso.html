@@ -45,78 +45,25 @@
         <div class="presentation-container">
             <div class="curso-presentation">
                 <div class="image-section">
-                    <img src="../../assets/images/course.png" alt="Java Logo">
-                    <h1>Python</h1>
-                    <a href="../login/login.html"><button id="subscribe-button">Desincribirse</button><a></a>
+                    <img src="" alt="Course Image">
+                    <h1></h1>
+                    <a href="../login/login.html"><button id="subscribe-button"></button></a>
                     <div class="footer-bar">
-                        <progress value="70" max="100"></progress>
+                        <progress value="0" max="100"></progress>
                         <span class="progress-text">70%</span>
                     </div>
                 </div>
                 <div class="description-section">
-                    <p>Python es un lenguaje de programación de alto nivel, interpretado y de propósito general,
-                        conocido por su simplicidad y legibilidad. Fue creado por Guido van Rossum y lanzado por
-                        primera vez en 1991. Python permite a los desarrolladores escribir código más rápidamente
-                        y con menos esfuerzo comparado con otros lenguajes de programación, gracias a su sintaxis
-                        clara y concisa. Además, es un lenguaje de programación multiplataforma, lo que significa
-                        que puede ejecutarse en diversos sistemas operativos, incluidos Windows, macOS y varias
-                        distribuciones de Linux. Una de las principales características de Python es su extensiva
-                        biblioteca estándar y su ecosistema de paquetes de terceros, accesible a través de su gestor
-                        de paquetes, pip. Esto permite a los desarrolladores acceder a una amplia gama de
-                        herramientas y bibliotecas para casi cualquier tarea, desde desarrollo web y análisis de
-                        datos hasta inteligencia artificial y computación científica. Python es ampliamente
-                        utilizado en la educación, debido a su facilidad de aprendizaje, y en la industria, donde es
-                        el lenguaje preferido para tareas de automatización, análisis de datos, aprendizaje
-                        automático y más. Python sigue evolucionando, con una comunidad activa que contribuye
-                        constantemente al desarrollo y mejora del lenguaje. Su diseño orientado a objetos, junto con
-                        su soporte para múltiples paradigmas de programación, incluidos la programación funcional y
-                        procedimental, hacen de Python una opción flexible y poderosa para una variedad de
-                        aplicaciones. Su popularidad y relevancia continúan creciendo, consolidándolo como uno de
-                        los lenguajes de programación más influyentes y utilizados en la actualidad.</p>
-
+                    <p></p>
                 </div>
             </div>
         </div>
     </section>
+
     <section class="lessons">
         <div class="lessons-container">
-            <div class="lessons-activity">
-                <a href="videos.html" class="lesson">
-                    <div class="lesson-info">
-                        <button class="play-button"><i class="fas fa-play"></i></button>
-                        <span>Lección 1: Introducción al lenguaje</span>
-                    </div>
-                    <div class="toggle-switch">
-                        <input type="checkbox" id="lesson1">
-                    </div>
-                </a>
-                <a href="documentos.html" class="lesson">
-                    <div class="lesson-info">
-                        <button class="document-button"><i class="fa-solid fa-file"></i></button>
-                        <span>Lección 2: Variables y tipo de datos</span>
-                    </div>
-                    <div class="toggle-switch">
-                        <input type="checkbox" id="lesson2">
-                    </div>
-                </a>
-                <a href="leccion1.html" class="lesson">
-                    <div class="lesson-info">
-                        <button class="play-button"><i class="fas fa-play"></i></button>
-                        <span>Lección 3: Operadores aritmeticas</span>
-                    </div>
-                    <div class="toggle-switch">
-                        <input type="checkbox" id="lesson1">
-                    </div>
-                </a>
-                <a href="leccion1.html" class="lesson">
-                    <div class="lesson-info">
-                        <button class="play-button"><i class="fas fa-play"></i></button>
-                        <span>Lección 4: Estructura Condional</span>
-                    </div>
-                    <div class="toggle-switch">
-                        <input type="checkbox" id="lesson1">
-                    </div>
-                </a>
+            <div class="lessons-activity" id="lessons-list">
+                <!-- Las lecciones se cargarán aquí dinámicamente -->
             </div>
         </div>
     </section>
@@ -136,5 +83,7 @@
     </footer>
 
 </body>
-
+<script src="../js/client-curso/client-verificar.js"></script>
+<script src="../js/client-curso/client-curso-load.js"></script>
+<script src="../js/client-curso/client-leccion-load.js"></script>
 </html>

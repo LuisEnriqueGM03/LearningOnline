@@ -94,4 +94,5 @@ export class CursoController {
         const cursoActualizado = await CursoModel.updateDescription({ id, descripcion });
         res.status(200).json(cursoActualizado);
     }
+
 }

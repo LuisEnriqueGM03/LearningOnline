@@ -39,7 +39,7 @@
 }
 
 #subscribe-button {
-    background-color: red;
+    background-color: #ae70ff;
     color: white;
     border: none;
     padding: 15px 40px;
@@ -49,8 +49,8 @@
 }
 
 #subscribe-button:hover {
-    background-color: white;
-    color: red;
+    background-color: #ae70ff;
+    color: white;
 }
 
 .description-section {
