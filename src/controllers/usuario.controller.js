@@ -31,9 +31,17 @@ export class UsuarioController {
             const newUser = await UsuarioModel.create({ nombre, apellido, correo, username, contraseña, tipoUsuario });
             res.status(201).json(newUser);
         } catch (error) {
+            if (error.code === '23505') { // Código de error de PostgreSQL para violación de unicidad
+                if (error.constraint === 'unique_correo') { // Nombre de la restricción de unicidad en la tabla
+                    return res.status(400).json({ error: 'El correo ya está registrado' });
+                } else if (error.constraint === 'unique_username') { // Nombre de la restricción de unicidad en la tabla
+                    return res.status(400).json({ error: 'El nombre de usuario ya está registrado' });
+                }
+            }
             res.status(500).json({ error: 'Error al crear usuario' });
         }
     }
+
 
     static async update(req, res) {
         const { id } = req.params;

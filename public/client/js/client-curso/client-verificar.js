@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         inscribirUsuario(user.id, courseId);
                     });
                 }
+                cargarProgreso(user.id, courseId);
             })
             .catch(error => console.error('Error al verificar la inscripción:', error));
     }
@@ -49,6 +50,7 @@ async function desinscribirUsuario(userId, courseId) {
         if (!response.ok) {
             throw new Error('Error al desinscribir al usuario');
         }
+        await window.eliminarProgreso(userId, courseId); // Llamar a la función para eliminar el progreso
         document.getElementById('subscribe-button').textContent = 'Incribirse';
         window.location.reload(); // Recargar la página
     } catch (error) {
@@ -70,6 +72,7 @@ async function inscribirUsuario(userId, courseId) {
             throw new Error('Error al inscribir al usuario');
         }
         document.getElementById('subscribe-button').textContent = 'Desincribirse';
+        await window.crearProgreso(userId, courseId); // Llamar a la función para crear el progreso
         window.location.reload(); // Recargar la página
     } catch (error) {
         console.error('Error al inscribir al usuario:', error);

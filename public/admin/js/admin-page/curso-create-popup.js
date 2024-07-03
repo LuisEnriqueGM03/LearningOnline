@@ -40,7 +40,14 @@ document.getElementById('curso-form').addEventListener('submit', async function(
     const nombreCurso = document.getElementById('curso-name').value;
     const descripcion = document.getElementById('curso-description').value;
     const categoriaId = document.getElementById('curso-category').value;
-    const usuarioId = 1; // Cambia esto para obtener el usuario actual autenticado
+
+    // Obtener el usuario actual autenticado desde el localStorage
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (!user) {
+        console.error('No user found in localStorage');
+        return;
+    }
+    const usuarioId = user.id;
 
     // Obtener la imagen como base64
     const imagenCurso = await toBase64(document.getElementById('curso-image').files[0]);
@@ -79,4 +86,3 @@ function toBase64(file) {
         reader.onerror = error => reject(error);
     });
 }
-

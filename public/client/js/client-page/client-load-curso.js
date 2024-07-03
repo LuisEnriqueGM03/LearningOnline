@@ -1,5 +1,3 @@
-// client-load-curso.js
-
 document.addEventListener('DOMContentLoaded', async () => {
     const user = JSON.parse(localStorage.getItem('user'));
     if (!user) {
@@ -18,7 +16,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const cursos = await response.json();
         console.log(cursos); // Agrega esta línea para ver los datos recibidos
-        renderCursos(cursos);
+
+        // Obtener el progreso para cada curso
+        const cursosConProgreso = await Promise.all(cursos.map(async curso => {
+            const progreso = await window.cargarProgreso(Usuario_id, curso.idcurso);
+            return { ...curso, progreso };
+        }));
+
+        renderCursos(cursosConProgreso);
     } catch (error) {
         console.error('Error:', error.message);
     }
@@ -48,8 +53,8 @@ function renderCursos(cursos) {
                         <img src="data:image/png;base64,${curso.imagencurso}" alt="${curso.nombrecurso} Logo">
                     </div>
                     <div class="footer-bar">
-                        <progress value="70" max="100"></progress>
-                        <span class="progress-text">70%</span>
+                        <progress value="${curso.progreso}" max="100"></progress>
+                        <span class="progress-text">${Math.round(curso.progreso)}%</span>
                     </div>
                 </a>
                 <button class="btn-del" onclick="showDeletePopup(${curso.id})">X</button>

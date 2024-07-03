@@ -31,7 +31,8 @@ function createLessonElement(lesson, isInscrito) {
     lessonElement.classList.add('lesson');
 
     if (isInscrito) {
-        lessonElement.addEventListener('click', () => {
+        lessonElement.addEventListener('click', async () => {
+            await window.marcarLeccionComoVisto(lesson.id);
             const page = lesson.tipodecontenido === 'Video' ? 'client-videos.html' : 'client-documentos.html';
             window.location.href = `${page}?id=${lesson.id}`;
         });

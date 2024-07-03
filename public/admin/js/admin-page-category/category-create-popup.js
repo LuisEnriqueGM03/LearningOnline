@@ -20,9 +20,13 @@ document.getElementById('category-form').addEventListener('submit', async functi
 
     const nombreCategoria = document.getElementById('category-name').value;
     const descripcion = document.getElementById('category-description').value;
-
-    // Obtener la imagen como base64
     const imagen = await toBase64(document.getElementById('category-image').files[0]);
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (!user) {
+        console.error('No user found in localStorage');
+        return;
+    }
+    const usuarioId = user.id;
 
     try {
         const response = await fetch('http://localhost:4000/categoria/', {
@@ -34,7 +38,7 @@ document.getElementById('category-form').addEventListener('submit', async functi
                 nombre: nombreCategoria,
                 descripcion,
                 imagen,
-                Usuario_id: 1
+                usuarioId
             })
         });
         if (response.ok) {

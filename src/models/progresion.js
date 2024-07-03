@@ -34,4 +34,16 @@ export class ProgresionModel {
         const { rowCount } = await pool.query('DELETE FROM Progresion WHERE id = $1;', [id]);
         return rowCount > 0;
     }
+    static async getByUsuarioAndLeccion({ Usuario_id, Leccion_id }) {
+        const { rows } = await pool.query('SELECT id, estado FROM Progresion WHERE Usuario_id = $1 AND Leccion_id = $2;', [Usuario_id, Leccion_id]);
+        const [progresion] = rows;
+        return progresion;
+    }
+    static async getByCursoAndUsuario({ userId, courseId }) {
+        const { rows } = await pool.query(
+            'SELECT Leccion_id, estado FROM Progresion WHERE Usuario_id = $1 AND Leccion_id IN (SELECT id FROM Leccion WHERE Curso_id = $2);',
+            [userId, courseId]
+        );
+        return rows;
+    }
 }

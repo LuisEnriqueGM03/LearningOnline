@@ -7,6 +7,18 @@ document.getElementById('register-form').addEventListener('submit', async functi
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
+    // Validaciones
+    const errorElement = document.getElementById('error');
+    if (username.length < 6) {
+        errorElement.textContent = 'El nombre de usuario debe tener al menos 6 caracteres.';
+        return;
+    }
+
+    if (password.length < 8) {
+        errorElement.textContent = 'La contraseña debe tener al menos 8 caracteres.';
+        return;
+    }
+
     const data = {
         username: username,
         nombre: name,
@@ -27,15 +39,17 @@ document.getElementById('register-form').addEventListener('submit', async functi
 
         if (response.ok) {
             const result = await response.json();
-            alert('Usuario registrado con éxito');
-
-
+            window.location.href = 'login.html'; // Redirigir a login.html después del registro
         } else {
             const error = await response.json();
-            document.getElementById('error').textContent = error.message || 'Error al registrar usuario';
+            if (error.error) {
+                errorElement.textContent = error.error;
+            } else {
+                errorElement.textContent = 'Error al registrar usuario';
+            }
         }
     } catch (error) {
         console.error('Error:', error);
-        document.getElementById('error').textContent = 'Error al registrar usuario';
+        errorElement.textContent = 'Error al registrar usuario';
     }
 });
