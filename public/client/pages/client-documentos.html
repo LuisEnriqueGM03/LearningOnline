@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../css/documentos/style.css">
+    <link rel="stylesheet" href="../../css/all.min.css">
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="../css/documentos/header.css">
+    <link rel="stylesheet" href="../css/documentos/footer.css">
+    <link rel="stylesheet" href="../css/documentos/documents.css">
+    <title>Learning Online</title>
+</head>
+
+<body>
+<header class="header">
+    <div class="header-container">
+        <div class="header-logo">
+            <h1>LearningOnline</h1>
+        </div>
+        <nav class="header-nav">
+            <label for="menu" id="menu-switch" aria-label="Menu"><i class="fas fa-bars"></i></label>
+            <input type="checkbox" id="menu">
+            <ul class="ul-nav">
+                <li id="no-slide"><a href="client-page.html">Mis Cursos</a></li>
+                <li id="no-slide"><a href="client-descubrir.html">Buscar Categorías</a></li>
+                <li class="user-info">
+                    <a class="user-bubble" href="#" onclick="logoutAndRedirect()">
+                        <i class="fas fa-user"></i> <span id="username-display">ERROR</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<section class="document">
+    <div class="document-container">
+        <div class="document-text">
+            <h2 id="lesson-title"><span id="lesson-prefix"></span> <span id="lesson-name"></span></h2>
+            <p id="lesson-content"></p>
+        </div>
+
+    </div>
+</section>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <h1>© Copyright LearningOnline. All Rights Reserved</h1>
+            <h1>Designed by Luis Enrique Gil</h1>
+        </div>
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+</body>
+<script src="../../js/logout.js"></script>
+<script src="../js/client-documentos/user-load.js"></script>
+<script src="../js/client-documentos/client-load-documentos.js"></script>
+<script src=".."></script>
+</html>

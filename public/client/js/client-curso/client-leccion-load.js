@@ -32,7 +32,8 @@ function createLessonElement(lesson, isInscrito) {
 
     if (isInscrito) {
         lessonElement.addEventListener('click', () => {
-            window.location.href = `leccion.html?id=${lesson.id}`;
+            const page = lesson.tipodecontenido === 'Video' ? 'client-videos.html' : 'client-documentos.html';
+            window.location.href = `${page}?id=${lesson.id}`;
         });
     } else {
         lessonElement.classList.add('disabled');

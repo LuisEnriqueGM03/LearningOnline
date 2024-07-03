@@ -25,13 +25,11 @@
                     <label for="menu" id="menu-switch" aria-label="Menu"><i class="fas fa-bars"></i></label>
                     <input type="checkbox" id="menu">
                     <ul class="ul-nav">
-                        <li><a href="../../../index.html">Inicio</a></li>
-                        <li><a href="../../../index.html#contact">Contáctanos</a></li>
-                        <li id="no-slide"><a href="../../../index.html#courses">Mis Cursos</a></li>
-                        <li id="no-slide"><a href="../../../index.html#categories">Buscar Categorías</a></li>
+                        <li id="no-slide"><a href="client-page.html">Mis Cursos</a></li>
+                        <li id="no-slide"><a href="client-descubrir.html">Buscar Categorías</a></li>
                         <li class="user-info">
-                            <a class="user-bubble" href="../../../index.html#categories">
-                                <i class="fas fa-user"></i> User
+                            <a class="user-bubble"  href="#" onclick="logoutAndRedirect()">
+                                <i class="fas fa-user"></i> <span id="username-display">ERROR</span>
                             </a>
                         </li>
                     </ul>
@@ -84,4 +82,6 @@
 </body>
 <script src="../js/client-descubrir/client-descubrir.js"></script>
 <script src="../js/client-descubrir/client-load-categoria.js"></script>
+<script src="../js/client-descubrir/user-load.js"></script>
+<script src="../../js/logout.js"></script>
 </html>

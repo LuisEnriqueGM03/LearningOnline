@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../assets/images/favicon.png">
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../css/client-curso/style.css">
     <link rel="stylesheet" href="../../css/all.min.css">
     <link rel="stylesheet" href="../../css/normalize.css">
     <link rel="stylesheet" href="../../css/fonts.css">
@@ -27,13 +27,11 @@
                 <label for="menu" id="menu-switch" aria-label="Menu"><i class="fas fa-bars"></i></label>
                 <input type="checkbox" id="menu">
                 <ul class="ul-nav">
-                    <li><a href="../../index.html">Inicio</a></li>
-                    <li><a href="../../../index.html#contact">Contáctanos</a></li>
                     <li id="no-slide"><a href="client-page.html">Mis Cursos</a></li>
-                    <li id="no-slide-categoria"><a href="client-descubrir.html">Buscar Categorías</a></li>
+                    <li id="no-slide"><a href="client-descubrir.html">Buscar Categorías</a></li>
                     <li class="user-info">
-                        <a class="user-bubble" href="../../../index.html#categories">
-                            <i class="fas fa-user"></i> User
+                        <a class="user-bubble" href="#" onclick="logoutAndRedirect()">
+                            <i class="fas fa-user"></i> <span id="username-display">ERROR</span>
                         </a>
                     </li>
                 </ul>
@@ -86,4 +84,8 @@
 <script src="../js/client-curso/client-verificar.js"></script>
 <script src="../js/client-curso/client-curso-load.js"></script>
 <script src="../js/client-curso/client-leccion-load.js"></script>
+<script src="../js/client-curso/client-progress-create.js"></script>
+<script src="../js/client-curso/user-load.js"></script>
+
+<script src="../../js/logout.js"></script>
 </html>
