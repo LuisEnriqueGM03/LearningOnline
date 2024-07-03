@@ -85,6 +85,16 @@ export class InscripcionController {
             res.status(500).json({ error: 'Error al verificar la inscripción' });
         }
     }
+    static async getUsuarioIdByCursoId(req, res) {
+        try {
+            const { Curso_id } = req.params;
+            const usuarios = await InscripcionModel.getUsuarioIdByCursoId({ Curso_id });
+            res.status(200).json(usuarios);
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ error: 'Error al obtener los usuarios para el curso' });
+        }
+    }
 
 
 

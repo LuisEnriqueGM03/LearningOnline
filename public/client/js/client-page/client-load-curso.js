@@ -44,7 +44,7 @@ function renderCursos(cursos) {
         cursos.forEach(curso => {
             const courseCard = document.createElement('div');
             courseCard.classList.add('my-course-card');
-            courseCard.setAttribute('data-id', curso.id);
+            courseCard.setAttribute('data-id', curso.id); // ID de la inscripción
 
             courseCard.innerHTML = `
                 <a href="client-curso.html?id=${curso.idcurso}" class="course-link">
@@ -57,9 +57,15 @@ function renderCursos(cursos) {
                         <span class="progress-text">${Math.round(curso.progreso)}%</span>
                     </div>
                 </a>
-                <button class="btn-del" onclick="showDeletePopup(${curso.id})">X</button>
+                <button class="btn-del" onclick="showDeletePopup(${curso.id}, ${curso.idcurso})">X</button> <!-- Pasar ambos IDs -->
             `;
             coursesContainer.appendChild(courseCard);
         });
     }
 }
+
+window.showDeletePopup = (inscripcionId, courseId) => {
+    document.querySelector('.eliminate-popup').style.display = 'block';
+    window.courseIdToDelete = inscripcionId; // ID de la inscripción
+    window.realCourseId = courseId; // ID del curso
+};

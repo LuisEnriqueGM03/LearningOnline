@@ -46,4 +46,12 @@ export class InscripcionModel {
         );
         return rows.length > 0;
     }
+    static async getUsuarioIdByCursoId({ Curso_id }) {
+        const { rows } = await pool.query('SELECT Usuario_id FROM Inscripcion WHERE Curso_id = $1;', [Curso_id]);
+        return rows;
+    }
+
+
+
+
 }

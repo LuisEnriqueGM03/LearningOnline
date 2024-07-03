@@ -41,7 +41,7 @@ export class ProgresionModel {
     }
     static async getByCursoAndUsuario({ userId, courseId }) {
         const { rows } = await pool.query(
-            'SELECT Leccion_id, estado FROM Progresion WHERE Usuario_id = $1 AND Leccion_id IN (SELECT id FROM Leccion WHERE Curso_id = $2);',
+            'SELECT id,Leccion_id, estado FROM Progresion WHERE Usuario_id = $1 AND Leccion_id IN (SELECT id FROM Leccion WHERE Curso_id = $2);',
             [userId, courseId]
         );
         return rows;
