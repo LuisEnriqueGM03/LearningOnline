@@ -40,7 +40,7 @@ export class CursoModel {
             Curso.id, 
             Curso.nombreCurso, 
             Curso.descripcion, 
-            encode(Curso.imagenCurso, 'base64') as imagenCurso,
+            encode(Curso.imagenCurso, 'base64') as imagen,
             Categoria.id as categoriaId, 
             Categoria.nombre as nombreCategoria, 
             Categoria.descripcion as descripcionCategoria 
@@ -72,7 +72,7 @@ export class CursoModel {
         Curso.id,
         Curso.nombreCurso,
         Curso.descripcion,
-        encode(Curso.imagenCurso, 'base64') as imagenCurso,
+        encode(Curso.imagenCurso , 'base64') as imagenCurso,
         Categoria.id as categoriaId,
         Categoria.nombre as nombreCategoria,
         Categoria.descripcion as descripcionCategoria

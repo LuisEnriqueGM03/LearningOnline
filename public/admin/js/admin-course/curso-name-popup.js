@@ -1,22 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let courseId = new URLSearchParams(window.location.search).get('id'); // Captura el ID del curso desde la URL
+    let courseId = new URLSearchParams(window.location.search).get('id');
 
-    // Mostrar el popup de editar nombre del curso
     document.getElementById('btn-edit-name').addEventListener('click', function() {
         document.querySelector('.curso-name-popup').style.display = 'block';
     });
 
-    // Seleccionar los botones de guardar y cancelar
-    const saveNameButton = document.querySelector('.curso-name-form .agregar-btn'); // Renombrado a saveNameButton
-    const cancelNameButton = document.querySelector('.curso-name-form .cancelar-btn'); // Renombrado a cancelNameButton
+    const saveNameButton = document.querySelector('.curso-name-form .agregar-btn');
+    const cancelNameButton = document.querySelector('.curso-name-form .cancelar-btn');
 
-    // Agregar eventos de clic para cerrar el popup
     saveNameButton.addEventListener('click', saveCourseName);
     cancelNameButton.addEventListener('click', closePopup);
 
     function closePopup(event) {
         if (event) {
-            event.preventDefault(); // Prevenir la acción por defecto del formulario
+            event.preventDefault();
         }
         document.querySelector('.curso-name-popup').style.display = 'none';
     }
@@ -36,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             if (response.ok) {
                 closePopup();
-                window.location.reload(); // Refresca la página para mostrar el nuevo nombre
+                window.location.reload();
             } else {
                 console.error('Error al actualizar el nombre del curso');
             }

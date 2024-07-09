@@ -5,7 +5,6 @@ window.openDeletePopup = function(lessonId) {
     document.querySelector('.leccion-popup').style.display = 'block';
 };
 
-// Seleccionar los botones de eliminar y cancelar
 document.addEventListener('DOMContentLoaded', () => {
     const deleteLeccionButton = document.querySelector('.leccion-popup-buttons .delete');
     const cancelLeccionButton = document.querySelector('.leccion-popup-buttons .cancel');
@@ -28,7 +27,6 @@ async function deleteLesson() {
             method: 'DELETE'
         });
         if (response.ok) {
-            // Refrescar la lista de lecciones después de eliminar
             window.displayLessons();
             closeLeccionPopup();
         } else {

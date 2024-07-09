@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             if (response.ok) {
                 const newLesson = await response.json();
-                await window.createProgressForUsers(courseId, newLesson.id); // Llamar a la función global
+                await window.createProgressForUsers(courseId, newLesson.id);
                 closePopup();
                 window.displayLessons();
             } else {

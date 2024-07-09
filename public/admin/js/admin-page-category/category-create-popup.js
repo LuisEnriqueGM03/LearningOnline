@@ -9,14 +9,13 @@ cancelCategoryButton.addEventListener('click', closeCategoryPopup);
 
 function closeCategoryPopup(event) {
     if (event) {
-        event.preventDefault(); // Prevenir la acción por defecto del formulario si es necesario
+        event.preventDefault();
     }
     document.querySelector('.category-add-popup').style.display = 'none';
 }
 
-// Manejar el envío del formulario para agregar una categoría
 document.getElementById('category-form').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Prevenir el envío del formulario
+    event.preventDefault();
 
     const nombreCategoria = document.getElementById('category-name').value;
     const descripcion = document.getElementById('category-description').value;
@@ -52,7 +51,7 @@ document.getElementById('category-form').addEventListener('submit', async functi
     }
 });
 
-// Convertir archivo a base64
+
 function toBase64(file) {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();

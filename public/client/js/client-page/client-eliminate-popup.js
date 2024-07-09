@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 const userId = user.id;
 
-                await window.eliminarProgress(userId, realCourseId); // Usar el verdadero ID del curso
+                await window.eliminarProgress(userId, realCourseId);
                 const response = await fetch(`http://localhost:4000/inscripcion/${courseIdToDelete}`, {
                     method: 'DELETE'
                 });

@@ -1,5 +1,5 @@
 document.getElementById('register-form').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Evita que el formulario se envíe de la manera tradicional
+    event.preventDefault();
 
     const username = document.getElementById('username').value;
     const name = document.getElementById('name').value;
@@ -7,8 +7,21 @@ document.getElementById('register-form').addEventListener('submit', async functi
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    // Validaciones
     const errorElement = document.getElementById('error');
+    errorElement.textContent = '';
+
+    if (!username || !name || !lastname || !email || !password) {
+        let missingFields = [];
+        if (!username) missingFields.push('Usuario');
+        if (!name) missingFields.push('Nombre');
+        if (!lastname) missingFields.push('Apellido');
+        if (!email) missingFields.push('Email');
+        if (!password) missingFields.push('Contraseña');
+
+        errorElement.textContent = 'Falta completar los siguientes campos: ' + missingFields.join(', ');
+        return;
+    }
+
     if (username.length < 6) {
         errorElement.textContent = 'El nombre de usuario debe tener al menos 6 caracteres.';
         return;
@@ -29,7 +42,7 @@ document.getElementById('register-form').addEventListener('submit', async functi
     };
 
     try {
-        const response = await fetch('http://localhost:4000/usuario/create', { // Asegúrate de cambiar la URL por la correcta
+        const response = await fetch('http://localhost:4000/usuario/create', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -39,7 +52,7 @@ document.getElementById('register-form').addEventListener('submit', async functi
 
         if (response.ok) {
             const result = await response.json();
-            window.location.href = 'login.html'; // Redirigir a login.html después del registro
+            window.location.href = 'login.html';
         } else {
             const error = await response.json();
             if (error.error) {

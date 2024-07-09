@@ -15,7 +15,7 @@ document.querySelectorAll('#toggle-aside-menu').forEach(button => {
                 labels.forEach(label => {
                     label.style.maxWidth = '100px';
                 });
-            }, 1000); // Retrasa la expansión del label en 2 segundos
+            }, 1000);
         }
     });
 });

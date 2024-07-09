@@ -1,8 +1,21 @@
 document.getElementById('login-form').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Evita que el formulario se envíe de la manera tradicional
+    event.preventDefault();
 
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
+
+    const errorElement = document.getElementById('error');
+    errorElement.textContent = ''; // Limpiar mensaje de error previo
+
+    // Verificar campos vacíos
+    if (!username || !password) {
+        let missingFields = [];
+        if (!username) missingFields.push('Usuario');
+        if (!password) missingFields.push('Contraseña');
+
+        errorElement.textContent = 'Falta completar los siguientes campos: ' + missingFields.join(', ');
+        return;
+    }
 
     const data = {
         username: username,
@@ -10,7 +23,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
     };
 
     try {
-        const response = await fetch('http://localhost:4000/usuario/login', { // Asegúrate de cambiar la URL por la correcta
+        const response = await fetch('http://localhost:4000/usuario/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -27,14 +40,14 @@ document.getElementById('login-form').addEventListener('submit', async function(
             } else if (result.tipoUsuario === 'Estudiante') {
                 window.location.href = '../../client/pages/client-page.html';
             } else {
-                document.getElementById('error').textContent = 'Tipo de usuario desconocido';
+                errorElement.textContent = 'Tipo de usuario desconocido';
             }
         } else {
             const error = await response.json();
-            document.getElementById('error').textContent = error.message || 'Error al iniciar sesión';
+            errorElement.textContent = error.message || 'Error al iniciar sesión o tu usuario no existe';
         }
     } catch (error) {
         console.error('Error:', error);
-        document.getElementById('error').textContent = 'Error al iniciar sesión';
+        errorElement.textContent = 'Error al iniciar sesión';
     }
 });

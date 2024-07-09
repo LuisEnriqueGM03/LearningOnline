@@ -44,7 +44,7 @@
     font-weight: bold;
 }
 
-.leccion-add-form input,
+.leccion-add-form input,textarea,
 .leccion-add-form select {
     padding: 10px;
     border: 1px solid #ae70ff;

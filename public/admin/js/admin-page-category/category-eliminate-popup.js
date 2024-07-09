@@ -7,7 +7,7 @@ function openPopup(id) {
 
 function closePopup() {
     document.querySelector('.eliminate-popup').style.display = 'none';
-    categoriaAEliminar = null; // Resetear el ID de la categoría a eliminar
+    categoriaAEliminar = null;
 }
 
 async function confirmDeleteCategoria() {
@@ -29,7 +29,6 @@ async function confirmDeleteCategoria() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Manejadores de eventos para el popup
     document.querySelector('.eliminate-popup .delete').addEventListener('click', confirmDeleteCategoria);
     document.querySelector('.eliminate-popup .cancel').addEventListener('click', closePopup);
 });

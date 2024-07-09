@@ -14,12 +14,9 @@ async function eliminarProgress(userId, courseId) {
                 throw new Error('Error al eliminar el progreso');
             }
         }
-
-        alert('Se eliminó correctamente todo el progreso');
     } catch (error) {
         console.error('Error al eliminar el progreso:', error);
     }
 }
 
-// Hacer que la función esté disponible globalmente
 window.eliminarProgress = eliminarProgress;

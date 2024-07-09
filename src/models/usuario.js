@@ -14,12 +14,17 @@ export class UsuarioModel {
 
     static async create({ nombre, apellido, correo, username, contraseña, tipoUsuario }) {
         const hashedPassword = await bcrypt.hash(contraseña, 10);
-        const { rows } = await pool.query(
-            'INSERT INTO Usuario (nombre, apellido, correo, username, contraseña, tipoUsuario) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
-            [nombre, apellido, correo, username, hashedPassword, tipoUsuario]
-        );
-        return rows[0];
+        try {
+            const { rows } = await pool.query(
+                'INSERT INTO Usuario (nombre, apellido, correo, username, contraseña, tipoUsuario) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
+                [nombre, apellido, correo, username, hashedPassword, tipoUsuario]
+            );
+            return rows[0];
+        } catch (error) {
+            throw error;
+        }
     }
+
 
     static async update({ id, nombre, apellido, correo, username, contraseña, tipoUsuario }) {
         const hashedPassword = await bcrypt.hash(contraseña, 10);

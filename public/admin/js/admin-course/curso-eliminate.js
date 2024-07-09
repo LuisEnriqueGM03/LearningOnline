@@ -1,6 +1,5 @@
 let courseIdToDelete = null;
 
-// Asumimos que el ID del curso se pasa como un parámetro en la URL
 document.addEventListener('DOMContentLoaded', function() {
     const params = new URLSearchParams(window.location.search);
     courseIdToDelete = params.get('id');

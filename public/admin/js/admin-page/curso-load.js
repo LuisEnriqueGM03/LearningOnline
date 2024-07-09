@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Manejadores de eventos para la búsqueda
     document.getElementById('search-btn').addEventListener('click', searchCursos);
     document.getElementById('search-input').addEventListener('keyup', function(event) {
         if (event.key === 'Enter') {
@@ -7,11 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Llama a fetchCursos al cargar la página
     fetchCursos();
 });
 
-// Obtener cursos desde la API
 async function fetchCursos() {
     try {
         const response = await fetch('http://localhost:4000/curso/curso-categoria/');
@@ -22,7 +19,6 @@ async function fetchCursos() {
     }
 }
 
-// Buscar cursos
 async function searchCursos() {
     const searchTerm = document.getElementById('search-input').value.toLowerCase();
     try {

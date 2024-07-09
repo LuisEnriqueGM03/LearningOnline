@@ -7,7 +7,7 @@ function openDeletePopup(id) {
 
 function closeDeletePopup() {
     document.querySelector('.eliminate-popup').style.display = 'none';
-    cursoAEliminar = null; // Resetear el ID del curso a eliminar
+    cursoAEliminar = null;
 }
 
 async function confirmDeleteCurso() {
@@ -29,7 +29,6 @@ async function confirmDeleteCurso() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Manejadores de eventos para el popup
     document.querySelector('.eliminate-popup .delete').addEventListener('click', confirmDeleteCurso);
     document.querySelector('.eliminate-popup .cancel').addEventListener('click', closeDeletePopup);
 });

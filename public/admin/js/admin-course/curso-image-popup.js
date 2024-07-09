@@ -1,22 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let courseId = new URLSearchParams(window.location.search).get('id'); // Captura el ID del curso desde la URL
+    let courseId = new URLSearchParams(window.location.search).get('id');
 
-    // Mostrar el popup de editar imagen del curso
     document.getElementById('btn-edit-photo').addEventListener('click', function() {
         document.querySelector('.imagen-image-popup').style.display = 'block';
     });
 
-    // Seleccionar los botones de subir y cancelar
-    const uploadButton = document.querySelector('.imagen-image-form .agregar-btn'); // Renombrado a uploadButton
-    const cancelButton = document.querySelector('.imagen-image-form .cancelar-btn'); // Renombrado a cancelButton
+    const uploadButton = document.querySelector('.imagen-image-form .agregar-btn');
+    const cancelButton = document.querySelector('.imagen-image-form .cancelar-btn');
 
-    // Agregar eventos de clic para cerrar el popup
     uploadButton.addEventListener('click', uploadImage);
     cancelButton.addEventListener('click', closePopup);
 
     function closePopup(event) {
         if (event) {
-            event.preventDefault(); // Prevenir la acción por defecto del formulario
+            event.preventDefault();
         }
         document.querySelector('.imagen-image-popup').style.display = 'none';
     }
@@ -45,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (response.ok) {
                 closePopup();
-                window.location.reload(); // Refresca la página para mostrar la nueva imagen
+                window.location.reload();
             } else {
                 console.error('Error al actualizar la imagen del curso');
             }

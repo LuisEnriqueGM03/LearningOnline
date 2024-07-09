@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const subscribeButton = document.getElementById('subscribe-button');
     const user = JSON.parse(localStorage.getItem('user'));
 
-    // Obtener el ID del curso de la URL
     const urlParams = new URLSearchParams(window.location.search);
     const courseId = urlParams.get('id');
 
@@ -50,9 +49,9 @@ async function desinscribirUsuario(userId, courseId) {
         if (!response.ok) {
             throw new Error('Error al desinscribir al usuario');
         }
-        await window.eliminarProgreso(userId, courseId); // Llamar a la función para eliminar el progreso
+        await window.eliminarProgreso(userId, courseId);
         document.getElementById('subscribe-button').textContent = 'Incribirse';
-        window.location.reload(); // Recargar la página
+        window.location.reload();
     } catch (error) {
         console.error('Error al desinscribir al usuario:', error);
         alert('Hubo un error al desinscribirte del curso');

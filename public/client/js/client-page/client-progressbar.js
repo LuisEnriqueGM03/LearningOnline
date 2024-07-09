@@ -14,7 +14,7 @@ async function cargarProgreso(userId, courseId) {
         return progreso;
     } catch (error) {
         console.error('Error al cargar el progreso del curso:', error);
-        return 0; // Devuelve 0 en caso de error
+        return 0;
     }
 }
 
@@ -26,6 +26,5 @@ function actualizarBarraDeProgreso(progreso) {
     progressText.textContent = `${Math.round(progreso)}%`;
 }
 
-// Hacer que las funciones estén disponibles globalmente
 window.cargarProgreso = cargarProgreso;
 window.actualizarBarraDeProgreso = actualizarBarraDeProgreso;

@@ -1,17 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Manejadores de eventos para la búsqueda
     document.querySelector('.search-btn').addEventListener('click', searchCategorias);
     document.querySelector('.search-input').addEventListener('keyup', function(event) {
         if (event.key === 'Enter') {
             searchCategorias();
         }
     });
-
-    // Llama a fetchCategorias al cargar la página
     fetchCategorias();
 });
 
-// Obtener categorías desde la API
 async function fetchCategorias() {
     try {
         const response = await fetch('http://localhost:4000/categoria/');
@@ -22,7 +18,6 @@ async function fetchCategorias() {
     }
 }
 
-// Buscar categorías
 async function searchCategorias() {
     const searchTerm = document.querySelector('.search-input').value.toLowerCase();
     try {
@@ -41,8 +36,6 @@ function renderCategorias(categorias) {
     categorias.forEach(categoria => {
         const categoryCard = document.createElement('div');
         categoryCard.classList.add('my-course-card');
-
-        // Convertir BYTEA a base64
         let base64Image = '';
         if (categoria.imagen) {
             base64Image = btoa(String.fromCharCode(...new Uint8Array(categoria.imagen.data)));

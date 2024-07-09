@@ -15,9 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         const cursos = await response.json();
-        console.log(cursos); // Agrega esta línea para ver los datos recibidos
 
-        // Obtener el progreso para cada curso
         const cursosConProgreso = await Promise.all(cursos.map(async curso => {
             const progreso = await window.cargarProgreso(Usuario_id, curso.idcurso);
             return { ...curso, progreso };
@@ -44,7 +42,7 @@ function renderCursos(cursos) {
         cursos.forEach(curso => {
             const courseCard = document.createElement('div');
             courseCard.classList.add('my-course-card');
-            courseCard.setAttribute('data-id', curso.id); // ID de la inscripción
+            courseCard.setAttribute('data-id', curso.id);
 
             courseCard.innerHTML = `
                 <a href="client-curso.html?id=${curso.idcurso}" class="course-link">
@@ -57,7 +55,7 @@ function renderCursos(cursos) {
                         <span class="progress-text">${Math.round(curso.progreso)}%</span>
                     </div>
                 </a>
-                <button class="btn-del" onclick="showDeletePopup(${curso.id}, ${curso.idcurso})">X</button> <!-- Pasar ambos IDs -->
+                <button class="btn-del" onclick="showDeletePopup(${curso.id}, ${curso.idcurso})">X</button> 
             `;
             coursesContainer.appendChild(courseCard);
         });
@@ -66,6 +64,6 @@ function renderCursos(cursos) {
 
 window.showDeletePopup = (inscripcionId, courseId) => {
     document.querySelector('.eliminate-popup').style.display = 'block';
-    window.courseIdToDelete = inscripcionId; // ID de la inscripción
-    window.realCourseId = courseId; // ID del curso
+    window.courseIdToDelete = inscripcionId;
+    window.realCourseId = courseId;
 };

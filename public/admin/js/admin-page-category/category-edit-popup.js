@@ -3,15 +3,15 @@ let categoriaAEditar = null;
 function openEditPopup(id) {
     categoriaAEditar = id;
     document.querySelector('.category-edit-popup').style.display = 'block';
-    loadCategoriaData(id); // Cargar datos de la categoría para editar
+    loadCategoriaData(id);
 }
 
 function closeEditPopup(event) {
     if (event) {
-        event.preventDefault(); // Prevenir la acción por defecto del formulario si es necesario
+        event.preventDefault();
     }
     document.querySelector('.category-edit-popup').style.display = 'none';
-    categoriaAEditar = null; // Resetear el ID de la categoría a editar
+    categoriaAEditar = null;
 }
 
 async function loadCategoriaData(id) {
@@ -21,7 +21,6 @@ async function loadCategoriaData(id) {
             const categoria = await response.json();
             document.getElementById('category-edit-name').value = categoria.nombre;
             document.getElementById('category-edit-description').value = categoria.descripcion;
-            // Si tienes una vista previa de la imagen, puedes cargarla aquí
         } else {
             console.error('Error al obtener los datos de la categoría');
         }
@@ -31,7 +30,7 @@ async function loadCategoriaData(id) {
 }
 
 document.getElementById('category-edit-form').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Prevenir el envío del formulario
+    event.preventDefault();
 
     const nombreCategoria = document.getElementById('category-edit-name').value;
     const descripcion = document.getElementById('category-edit-description').value;
@@ -55,7 +54,7 @@ document.getElementById('category-edit-form').addEventListener('submit', async f
             })
         });
         if (response.ok) {
-            fetchCategorias(); // Actualizar la lista de categorías
+            fetchCategorias();
             closeEditPopup();
         } else {
             console.error('Error al editar la categoría');
@@ -65,7 +64,6 @@ document.getElementById('category-edit-form').addEventListener('submit', async f
     }
 });
 
-// Convertir archivo a base64
 function toBase64(file) {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();

@@ -84,7 +84,20 @@
   color: #ae70ff;
   box-shadow: 0 0 30px black;
 }
-
+#error{
+  margin-top: 10px;
+  font-size: 18px;
+  color: red;
+  text-align: center;
+  width: 380px;
+  margin: 0px auto;
+  margin-top: 10px;
+}
+@media (min-width:768px) {
+  #error {
+    width: 500px;
+  }
+}
 @media (min-width:992px) {
   .register {
     height: 600px;
