@@ -22,9 +22,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const nombre = document.getElementById('leccion-name').value;
         const descripcion = document.getElementById('leccion-descripcion').value;
         const tipoDeContenido = document.getElementById('type-content').value;
-        const contenido = document.getElementById('leccion-content').value;
+        let contenido = document.getElementById('leccion-content').value;
         const orden = document.getElementById('leccion-orden').value;
         const courseId = new URLSearchParams(window.location.search).get('id');
+
+        if (tipoDeContenido === 'Video') {
+            contenido = getEmbeddedVideoUrl(contenido);
+        }
 
         try {
             const response = await fetch(`http://localhost:4000/leccion`, {
@@ -45,5 +49,23 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (error) {
             console.error('Error al agregar la lección:', error);
         }
+    }
+
+    function getEmbeddedVideoUrl(url) {
+        const videoId = getVideoId(url);
+        if (videoId) {
+            return `https://www.youtube.com/embed/${videoId}`;
+        } else {
+            alert("La Url ingresada es invalida");
+            throw new Error("Invalid video URL");
+        }
+    }
+
+    function getVideoId(url) {
+        const videoId = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+        if (videoId != null) {
+            return videoId[1];
+        }
+        return null;
     }
 });

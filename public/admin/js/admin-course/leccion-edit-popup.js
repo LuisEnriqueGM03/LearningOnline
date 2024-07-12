@@ -6,7 +6,7 @@ window.openEditPopup = function(lesson) {
 
     document.getElementById('edit-leccion-name').value = lesson.nombre;
     document.getElementById('edit-leccion-descripcion').value = lesson.descripcion;
-    document.getElementById('edit-type-content').value = lesson.tipoDeContenido;
+    document.getElementById('edit-type-content').value = lesson.tipodecontenido;
     document.getElementById('edit-leccion-content').value = lesson.contenido;
     document.getElementById('edit-leccion-orden').value = lesson.orden;
 };
@@ -30,8 +30,12 @@ async function saveLesson(event) {
     const nombre = document.getElementById('edit-leccion-name').value;
     const descripcion = document.getElementById('edit-leccion-descripcion').value;
     const tipoDeContenido = document.getElementById('edit-type-content').value;
-    const contenido = document.getElementById('edit-leccion-content').value;
+    let contenido = document.getElementById('edit-leccion-content').value;
     const orden = document.getElementById('edit-leccion-orden').value;
+
+    if (tipoDeContenido === 'Video' && !contenido.includes('embed')) {
+        contenido = getEmbeddedVideoUrl(contenido);
+    }
 
     try {
         const response = await fetch(`http://localhost:4000/leccion/${lessonToEdit.id}`, {
@@ -50,4 +54,22 @@ async function saveLesson(event) {
     } catch (error) {
         console.error('Error al actualizar la lección:', error);
     }
+}
+
+function getEmbeddedVideoUrl(url) {
+    const videoId = getVideoId(url);
+    if (videoId) {
+        return `https://www.youtube.com/embed/${videoId}`;
+    } else {
+        alert("La URL ingresada es inválida");
+        throw new Error("Invalid video URL");
+    }
+}
+
+function getVideoId(url) {
+    const videoId = url.match(/(?:https?:\/{2})?(?:www\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+    if (videoId != null) {
+        return videoId[1];
+    }
+    return null;
 }
