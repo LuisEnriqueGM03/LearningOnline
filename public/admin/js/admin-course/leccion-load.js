@@ -16,6 +16,14 @@ function createLessonElement(lesson) {
     const lessonElement = document.createElement('div');
     lessonElement.classList.add('lesson');
 
+    lessonElement.onclick = function() {
+        if (lesson.tipodecontenido === 'Video') {
+            window.location.href = `admin-videos.html?id=${lesson.id}`;
+        } else if (lesson.tipodecontenido === 'Texto') {
+            window.location.href = `admin-documentos.html?id=${lesson.id}`;
+        }
+    };
+
     const lessonInfo = document.createElement('div');
     lessonInfo.classList.add('lesson-info');
 
@@ -37,12 +45,18 @@ function createLessonElement(lesson) {
     const editButton = document.createElement('button');
     editButton.classList.add('option-btn', 'edit');
     editButton.innerHTML = '<i class="fas fa-edit"></i> Editar';
-    editButton.onclick = function() { leccionPopupLeccion(lesson); };
+    editButton.onclick = function(event) {
+        event.stopPropagation();
+        leccionPopupLeccion(lesson);
+    };
 
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('option-btn', 'delete');
     deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i> Eliminar';
-    deleteButton.onclick = function() { leccionPopupEliminate(lesson.id); };
+    deleteButton.onclick = function(event) {
+        event.stopPropagation();
+        leccionPopupEliminate(lesson.id);
+    };
 
     lessonAdmin.appendChild(editButton);
     lessonAdmin.appendChild(deleteButton);

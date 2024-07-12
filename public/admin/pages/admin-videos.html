@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../css/admin-video/style.css">
+    <link rel="stylesheet" href="../../css/all.min.css">
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="../css/admin-video/header.css">
+    <link rel="stylesheet" href="../css/admin-video/footer.css">
+    <link rel="stylesheet" href="../css/admin-video/video.css">
+    <title>Learning Online</title>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="header-container">
+        <div class="header-logo">
+            <h1>LearningOnline</h1>
+        </div>
+        <nav class="header-nav">
+            <label for="menu" id="menu-switch" aria-label="Menu"><i class="fas fa-bars"></i></label>
+            <input type="checkbox" id="menu">
+            <ul class="ul-nav">
+                <li><a href="admin-page.html">Dashboard</a></li>
+                <li class="user-info">
+                    <a class="user-bubble" id="user-link" href="#" onclick="logoutAndRedirect()">
+                        <i class="fas fa-user"></i> <span id="username-display">ERROR</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<section class="video">
+    <div class="video-container">
+        <div class="video-url">
+            <h2 id="lesson-title"></h2>
+            <iframe id="lesson-video" class="v" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <h1>© Copyright LearningOnline. All Rights Reserved</h1>
+            <h1>Designed by Luis Enrique Gil</h1>
+        </div>
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+</body>
+
+<script src="../../js/logout.js"></script>
+<script src="../js/admin-video/user-load.js"></script>
+<script src="../js/admin-video/admin-load-videos.js"></script>
+</html>

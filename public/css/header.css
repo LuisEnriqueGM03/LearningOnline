@@ -1,3 +1,13 @@
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+
+}
+.header-container {
+    height: 80px;
+    margin-bottom: 100px;
+}
 .header-logo h1,
 .header-nav #menu-switch {
     color: #ae70ff;

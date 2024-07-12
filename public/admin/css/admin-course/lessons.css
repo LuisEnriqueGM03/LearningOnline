@@ -139,17 +139,11 @@
         padding-left: 50px;
         padding-right: 50px;
     }
-    .lesson-admin #btn-edit:hover{
+    .lesson-admin button:hover{
         background: white;
         color: #ae70ff;
         transition: 0.8s;
     }
-    .lesson-admin #btn-delete:hover{
-        background: white;
-        color: #ae70ff;
-        transition: 0.8s;
-    }
-
     .lessons-activity {
         width: 100%;
     }
