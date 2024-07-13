@@ -223,6 +223,9 @@ aside {
     .my-course-container {
         width: 1140px
     }
+    .my-course-card {
+        width: 290px;
+    }
 
     .my-course-card:hover {
         border: 3px solid #ae70ff;

@@ -20,10 +20,13 @@ async function confirmDeleteCategoria() {
                 fetchCategorias();
                 closePopup();
             } else {
-                console.error('Error al eliminar la categoría');
+                const errorData = await response.json();
+                console.error('Error al eliminar la categoría:', errorData.error);
+                alert(errorData.error);
             }
         } catch (error) {
             console.error('Error al eliminar la categoría:', error);
+            alert('Error al eliminar la categoría');
         }
     }
 }

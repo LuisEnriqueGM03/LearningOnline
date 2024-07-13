@@ -9,7 +9,7 @@ async function cargarProgreso(userId, courseId) {
         const totalLecciones = progresiones.length;
         const leccionesVistas = progresiones.filter(progresion => progresion.estado === 'Visto').length;
 
-        const progreso = (leccionesVistas / totalLecciones) * 100;
+        const progreso = totalLecciones === 0 ? 0 : (leccionesVistas / totalLecciones) * 100;
 
         return progreso;
     } catch (error) {

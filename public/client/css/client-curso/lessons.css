@@ -94,6 +94,9 @@
     text-decoration: none;
    color: black;
 }
+.lessons-activity p {
+    color: white;
+}
 
 @media(min-width: 768px) {
     .lessons-container {

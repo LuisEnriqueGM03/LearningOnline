@@ -32,6 +32,11 @@ document.getElementById('register-form').addEventListener('submit', async functi
         return;
     }
 
+    if (!esEmailValido(email)) {
+        errorElement.textContent = 'El correo electrónico no es válido.';
+        return;
+    }
+
     const data = {
         username: username,
         nombre: name,
@@ -66,3 +71,8 @@ document.getElementById('register-form').addEventListener('submit', async functi
         errorElement.textContent = 'Error al registrar usuario';
     }
 });
+
+function esEmailValido(email) {
+    var pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return pattern.test(email);
+}

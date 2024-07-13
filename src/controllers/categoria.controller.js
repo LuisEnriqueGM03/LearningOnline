@@ -35,11 +35,19 @@ export class CategoriaController {
 
     static async delete(req, res) {
         const { id } = req.params;
-        const categoriaEliminada = await CategoriaModel.delete({ id });
-        if (!categoriaEliminada) {
-            res.status(404).json({ error: 'Categoria no encontrada' });
-            return;
+        try {
+            const categoriaEliminada = await CategoriaModel.delete({ id });
+            if (!categoriaEliminada) {
+                res.status(404).json({ error: 'Categoría no encontrada' });
+                return;
+            }
+            res.status(204).send();
+        } catch (error) {
+            if (error.code === '23503') { // Foreign key violation error code
+                res.status(409).json({ error: 'No se puede eliminar porque esta categoria tiene cursos.' });
+            } else {
+                res.status(500).json({ error: 'Error al eliminar la categoría' });
+            }
         }
-        res.status(204).send();
     }
 }
