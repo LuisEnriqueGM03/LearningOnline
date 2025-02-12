@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(express.json());
 
 app.use(express.static('public'));
-const PORT = process.env.PORT ?? 4000;
+const PORT = process.env.PORT ?? 3000;
 
 app.get('/', (req, res) => {
     res.json({ "mensaje": 'Hola mundo' });
